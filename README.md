@@ -30,5 +30,5 @@ These instructions will get you a copy of the project up and running on your loc
 - Open the project in your code editor
 - Open the index.html file in your web browser to run the app
 
-# Demo
+# Live Demo
 Check out the live demo of the application at https://kumardinesh1908.github.io/imdb-clone/
