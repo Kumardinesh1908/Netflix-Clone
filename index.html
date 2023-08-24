@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="imdb.css">
+    <title>IMDB Clone</title>
+</head>
+
+<body>
+    <!-- Header container -->
+    <div class="header">
+        <img src="Imdb-Logo.png" alt="logo" class="logo">
+        
+        <!-- Search input and results container -->
+        <label for="searchInput">
+            Search Movie : 
+            <input type="text" id="searchInput" placeholder="Search movies...">
+        </label>
+        <ul id="searchResults"></ul> <!-- Display search results here -->
+        <button id="goToFavoriteMovies" class="all-favourite-Btn">Favorite Movies</button>
+    </div>
+
+    <!-- Included IMDb-specific JavaScript -->
+    <script src="imdb.js"></script>
+</body>
+
+</html>
+

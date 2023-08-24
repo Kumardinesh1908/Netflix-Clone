@@ -1,0 +1,96 @@
+/* Reset default styles and set font */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the header */
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: rgb(54, 53, 53);
+}
+
+/* Logo styling */
+.logo {
+    width: 8%;
+    cursor: pointer;
+}
+
+/* Styling for the favorite movies section */
+.favorite-Movies {
+    background: rgb(54, 53, 53);
+    width: 99%;
+    margin: 15px auto;
+}
+
+/* Styling for the favorite movies heading */
+.favorite-Movies h1 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Styling for the list of favorite movies */
+#favoriteMoviesList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Styling for each individual favorite movie item */
+.favorite-movie-item {
+    width: 18%;
+    height: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: white;
+    margin: 20px auto;
+}
+
+/* Styling for the thumbnail image */
+.search-item-thumbnail img {
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Styling for movie info headings */
+.search-item-info h4,
+h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+/* Styling for the remove button */
+.removeBtn {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+}
+
+.removeBtn:hover {
+    background-color: darkred;
+}
+
+/* Styling for additional information paragraph */
+p {
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    font-style: italic;
+}
