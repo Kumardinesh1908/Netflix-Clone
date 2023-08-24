@@ -45,7 +45,7 @@ function showFavoriteMoviesList() {
             // Add a click event listener to navigate to respestive movie details page
             favoriteMovieItem.addEventListener('click', () => {
                 // Construct the URL for the movie details page with the IMDb ID as a parameter
-                const movieDetailsURL = `movie_details.html?imdbID=${imdbID}`;
+                const movieDetailsURL = `movie_details.html?imdbID=${movie.imdbID}`;
                 window.location.href = movieDetailsURL;
             });
         });
