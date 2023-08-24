@@ -38,9 +38,16 @@ function showFavoriteMoviesList() {
             `;
             favoriteMoviesList.appendChild(favoriteMovieItem);
 
-        // Add a click event listener to the remove button
-        const removeBtn = favoriteMovieItem.querySelector('.removeBtn');
-        removeBtn.addEventListener('click', () => removeMovieFromFavorites(movie.imdbID));
+            // Add a click event listener to the remove button
+            const removeBtn = favoriteMovieItem.querySelector('.removeBtn');
+            removeBtn.addEventListener('click', () => removeMovieFromFavorites(movie.imdbID));
+
+            // Add a click event listener to navigate to respestive movie details page
+            favoriteMovieItem.addEventListener('click', () => {
+                // Construct the URL for the movie details page with the IMDb ID as a parameter
+                const movieDetailsURL = `movie_details.html?imdbID=${imdbID}`;
+                window.location.href = movieDetailsURL;
+            });
         });
     }
 }
@@ -48,7 +55,7 @@ function showFavoriteMoviesList() {
 // Function to remove a movie from the favorites
 function removeMovieFromFavorites(movieId) {
     let storedFavoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
-    
+
     // Find the index of the movie with the given ID in the stored array
     const movieIndex = storedFavoriteMovies.findIndex(movie => movie.imdbID === movieId);
 
