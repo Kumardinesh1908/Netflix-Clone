@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
 // Get the element where the favorite movies will be displayed
 const favoriteMoviesList = document.getElementById('favoriteMoviesList');
 
+// Function to display the list of favorite movies
 function showFavoriteMoviesList() {
     // Retrieve favorite movies from local storage or use an empty array
     const storedFavoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
