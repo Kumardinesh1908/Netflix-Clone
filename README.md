@@ -1,22 +1,22 @@
 # IMDB Clone - Movie Management Web App
-
 IMDB Clone is a dynamic web application that harnesses the power of vanilla JavaScript to provide users with a seamless and efficient browsing experience.
 The core functionality of the app centers around its capability to search for movies using the OMDB API.
 By querying the API, the application retrieves a wealth of data about the requested movie, including key details such as its title, release year, and other pertinent information. 
 This data is then thoughtfully presented in a user-friendly format, enabling users to swiftly access the precise movie details they desire.
 
-## Key Features:
+# Usage
+- **Search Movies:** Users can search for movies using a search bar with auto-suggestions. Enter a movie title in the search bar to get a list of matching movies. Click on a movie to view its details.
+- **View Movie Details:** On the search results or favorite movies page, click on a movie to view its detailed information about a selected movie, including its title, poster, year, rating, genre, actors, and more.
+- **Favorite Movies Page:** Users can visit a dedicated page to view their list of favorite movies.
+- **Add to Favorites:** Click the "Add to Favorites" button on the search results or movie details page to add a movie to your favorite list.
+- **Remove from Favorites:** On the favorite movies page or movie details page, click the "Remove From Favorites" button to remove a movie from your favorites.
 
-- Efficient Movie Search: The app's standout feature is its ability to search for movies through the OMDB API, ensuring users can easily find the movies they're interested in watching.
-- Informative Display: The fetched movie information is neatly organized and presented to users in a clear and comprehensible manner, streamlining the search process.
-- In-depth Movie Details: Users have the option to delve deeper into their chosen movie by accessing an extensive array of details about the film.
-- Favorite Movie Management: The app enables users to mark their favorite movies, thereby facilitating swift access to their preferred choices in the future.
-
-## Technologies Used:
-
-- Vanilla JavaScript
-- HTML
-- CSS
+# Technologies Used:
+- HTML5, CSS3 for front-end structure and styling
+- JavaScript for dynamic functionality
+- OMDB API for movie data
+- GitHub for version control
+- Hosted on GitHub Pages
 
 # Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
