@@ -43,7 +43,8 @@ function showFavoriteMoviesList() {
             removeBtn.addEventListener('click', () => removeMovieFromFavorites(movie.imdbID));
 
             // Add a click event listener to navigate to respestive movie details page
-            favoriteMovieItem.addEventListener('click', () => {
+            const thumbnail = favoriteMovieItem.querySelector('.search-item-thumbnail');
+            thumbnail.addEventListener('click', () => {
                 // Construct the URL for the movie details page with the IMDb ID as a parameter
                 const movieDetailsURL = `movie_details.html?imdbID=${movie.imdbID}`;
                 window.location.href = movieDetailsURL;
