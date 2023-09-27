@@ -21,11 +21,16 @@ function showFavoriteMoviesList() {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = "It's lonely here. Add some favorite movies!";
         favoriteMoviesList.appendChild(emptyMessage);
-    } else { // Display each favorite movie as a separate item
+    } else { 
+        
+        // Display each favorite movie as a separate item
         storedFavoriteMovies.forEach(movie => {
+            
             const shortenedTitle = movie.Title.substring(0, 47);
             const favoriteMovieItem = document.createElement('div');
+
             favoriteMovieItem.classList.add('favorite-movie-item');
+
             favoriteMovieItem.innerHTML = `
                 <div class="search-item-thumbnail">
                     <img src="${movie.Poster}">

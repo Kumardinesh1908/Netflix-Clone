@@ -10,7 +10,7 @@ goToFavoriteMoviesBtn.addEventListener('click', () => {
 
 const API_KEY = '5b92f78'; // OMDB API key
 // Variables to handle search timeout and favorite movies list
-let timeoutId; 
+let timeoutId;
 const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
 
 // Event listener for search input changes
@@ -43,7 +43,6 @@ searchInput.addEventListener('keyup', async event => {
     }
 });
 
-
 // Function to fetch search results from OMDB API
 async function fetchSearchResults(query) {
     const response = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`);
@@ -62,9 +61,9 @@ function displaySearchResults(results) {
         const movieItem = document.createElement('li');
 
         let buttonText = "Add to Favorites"; // Set default button text
-
-         // Check if the movie is already in favorites
-         if (favoriteMovies.some(favoriteMovie => favoriteMovie.imdbID === movie.imdbID)) {
+        
+        // Check if the movie is already in favorites
+        if (favoriteMovies.find(favoriteMovie => favoriteMovie.imdbID === movie.imdbID)) {
             buttonText = "Go to Favorites"; // Change button text
         }
 
@@ -79,6 +78,7 @@ function displaySearchResults(results) {
                                 </div>
                                 <button class="favoriteBtn" id="${movie.imdbID}">${buttonText}</button>   
                                 `;
+
         const favoriteBtn = movieItem.querySelector('.favoriteBtn');
 
         // Add event listener for favorite button
@@ -90,9 +90,11 @@ function displaySearchResults(results) {
             }
         });
 
-        // Add event listener to navigate to movie details page
+
         const thumbnail = movieItem.querySelector('.search-item-thumbnail');
         const info = movieItem.querySelector('.search-item-info');
+
+        // Add event listener to navigate to movie details page
         (thumbnail && info).addEventListener('click', () => {
             window.location.href = `movie_details.html?imdbID=${movie.imdbID}`;
         });
@@ -115,7 +117,7 @@ function addToFavorites(movie) {
                 window.location.href = 'favorite_movies.html'; // Navigate to the favorite movies page
             });
         }
-    } 
+    }
 }
 
 // Event listener to close search results when clicking outside
