@@ -1,7 +1,7 @@
 // Selecting the logo element and adding a click event listener to navigate to the homepage
 const logo = document.querySelector('.logo');
 logo.addEventListener('click', () => {
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 });
 
 // Selecting various elements on the page for displaying movie details
@@ -16,23 +16,26 @@ const actors = document.getElementById('actors');
 const plot = document.getElementById('plot');
 const language = document.getElementById('language');
 const awards = document.getElementById('awards');
-const favoriteBtn = document.querySelector('.favoriteBtn'); 
+const favoriteBtn = document.querySelector('.favoriteBtn');
 
 // API key for OMDB API and loading favorite movies from local storage
-const API_KEY = '5b92f78'; 
+const API_KEY = '5b92f78';
 const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
 
 
 // Retrieve the IMDb ID from the URL parameter
 const params = new URLSearchParams(window.location.search);
+console.log(params)
+
 const imdbID = params.get('imdbID');
+
+console.log(imdbID)
 
 // Function to fetch detailed information about the movie using its IMDb ID
 async function fetchMovieDetails(imdbID) {
     const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`);
     const data = await response.json();
     return data;
-    
 }
 
 // Display the movie details on the page
@@ -60,7 +63,7 @@ async function displayMovieDetails() {
             favoriteBtn.textContent = "Add To Favorites";
         }
         favoriteBtn.addEventListener('click', () => toggleFavorite(movieDetails));
-    
+
     } catch (error) {
         console.error('Error fetching movie details:', error);
     }

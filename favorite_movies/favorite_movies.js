@@ -1,7 +1,7 @@
 // Get the logo element and add a click event listener to navigate to the index page
 const logo = document.querySelector('.logo');
 logo.addEventListener('click', () => {
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 });
 
 // Add a window load event listener to show the favorite movies list when the page loads
@@ -51,7 +51,7 @@ function showFavoriteMoviesList() {
             const thumbnail = favoriteMovieItem.querySelector('.search-item-thumbnail');
             thumbnail.addEventListener('click', () => {
                 // Construct the URL for the movie details page with the IMDb ID as a parameter
-                const movieDetailsURL = `movie_details.html?imdbID=${movie.imdbID}`;
+                const movieDetailsURL = `../movie_details/movie_details.html?imdbID=${movie.imdbID}`;
                 window.location.href = movieDetailsURL;
             });
         });

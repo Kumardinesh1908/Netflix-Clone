@@ -5,7 +5,7 @@ const goToFavoriteMoviesBtn = document.getElementById('goToFavoriteMovies');
 
 // Event listener to navigate to favorite movies page
 goToFavoriteMoviesBtn.addEventListener('click', () => {
-    window.location.href = 'favorite_movies.html';
+    window.location.href = 'favorite_movies/favorite_movies.html';
 });
 
 const API_KEY = '5b92f78'; // OMDB API key
@@ -86,7 +86,7 @@ function displaySearchResults(results) {
             if (buttonText === "Add to Favorites") {
                 addToFavorites(movie);
             } else {
-                window.location.href = 'favorite_movies.html'; // Navigate to the favorite movies page
+                window.location.href = 'favorite_movies/favorite_movies.html'; // Navigate to the favorite movies page
             }
         });
 
@@ -96,7 +96,7 @@ function displaySearchResults(results) {
 
         // Add event listener to navigate to movie details page
         (thumbnail && info).addEventListener('click', () => {
-            window.location.href = `movie_details.html?imdbID=${movie.imdbID}`;
+            window.location.href = `movie_details/movie_details.html?imdbID=${movie.imdbID}`;
         });
 
         // Append movie item to search results
@@ -114,7 +114,7 @@ function addToFavorites(movie) {
         if (favoriteBtn) {
             favoriteBtn.textContent = "Go to Favorites";
             favoriteBtn.addEventListener('click', () => {
-                window.location.href = 'favorite_movies.html'; // Navigate to the favorite movies page
+                window.location.href = 'favorite_movies/favorite_movies.html'; // Navigate to the favorite movies page
             });
         }
     }
