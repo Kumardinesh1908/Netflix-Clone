@@ -193,7 +193,7 @@ li:hover {
 }
 
 .trendingMovies:hover .trending-navigation-button{
-  opacity: 0.5;
+  opacity: 0.6;
   z-index: 1;
 }
 
@@ -266,7 +266,7 @@ li:hover {
 }
 
 .netflixMovies:hover .netflix-navigation-button{
-  opacity: 0.5;
+  opacity: 0.8;
   z-index: 1;
 }
 
@@ -275,6 +275,79 @@ li:hover {
 }
 
 #netflixNextButton {
+  right: 0%;
+}
+
+/* ----Netflix Hindi---- */
+
+.netflixHindi h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#netflixHindiContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#netflixHindiContainer div {
+  width: 290px;
+  height: 170px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#netflixHindiContainer div:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#netflixHindiContainer div img {
+  width: 290px;
+  height: 170px;
+  border-radius: 5px;
+}
+
+.netflixHindiMovies {
+  position: relative;
+}
+
+.netflixHindi-navigation-button {
+  width: 80px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 9.3%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.netflixHindiMovies:hover .netflixHindi-navigation-button{
+  opacity: 0.8;
+  z-index: 1;
+}
+
+#netflixHindiPreviousButton{
+  left: 15px;
+}
+
+#netflixHindiNextButton {
   right: 0%;
 }
 
@@ -339,7 +412,7 @@ li:hover {
 }
 
 .topMovies:hover .top-navigation-button{
-  opacity: 0.5;
+  opacity: 0.8;
   z-index: 1;
 }
 
@@ -348,5 +421,297 @@ li:hover {
 }
 
 #topNextButton {
+  right: 0%;
+}
+
+/* ----Horror Movies---- */
+
+.horror h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#horrorContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#horrorContainer div {
+  width: 290px;
+  height: 170px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#horrorContainer div:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#horrorContainer div img {
+  width: 290px;
+  height: 170px;
+  border-radius: 5px;
+}
+
+.horrorMovies {
+  position: relative;
+}
+
+.horror-navigation-button {
+  width: 80px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 9.3%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.horrorMovies:hover .horror-navigation-button{
+  opacity: 0.8;
+  z-index: 1;
+}
+
+#horrorPreviousButton{
+  left: 15px;
+}
+
+#horrorNextButton {
+  right: 0%;
+}
+
+/* ----Romantic Movies---- */
+
+.romantic h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#romanticContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#romanticContainer div {
+  width: 290px;
+  height: 170px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#romanticContainer div:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#romanticContainer div img {
+  width: 290px;
+  height: 170px;
+  border-radius: 5px;
+}
+
+.romanticMovies {
+  position: relative;
+}
+
+.romantic-navigation-button {
+  width: 80px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 9.3%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.romanticMovies:hover .romantic-navigation-button{
+  opacity: 0.8;
+  z-index: 1;
+}
+
+#romanticPreviousButton{
+  left: 15px;
+}
+
+#romanticNextButton {
+  right: 0%;
+}
+
+/* ----Comedy Movies---- */
+
+.comedy h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#comedyContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#comedyContainer div {
+  width: 290px;
+  height: 170px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#comedyContainer div:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#comedyContainer div img {
+  width: 290px;
+  height: 170px;
+  border-radius: 5px;
+}
+
+.comedyMovies {
+  position: relative;
+}
+
+.comedy-navigation-button {
+  width: 80px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 9.3%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.comedyMovies:hover .comedy-navigation-button{
+  opacity: 0.8;
+  z-index: 1;
+}
+
+#comedyPreviousButton{
+  left: 15px;
+}
+
+#comedyNextButton {
+  right: 0%;
+}
+
+/* ----Action Movies---- */
+
+.action h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#actionContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#actionContainer div {
+  width: 290px;
+  height: 170px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#actionContainer div:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#actionContainer div img {
+  width: 290px;
+  height: 170px;
+  border-radius: 5px;
+}
+
+.actionMovies {
+  position: relative;
+}
+
+.action-navigation-button {
+  width: 80px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 9.3%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.actionMovies:hover .action-navigation-button{
+  opacity: 0.8;
+  z-index: 1;
+}
+
+#actionPreviousButton{
+  left: 15px;
+}
+
+#actionNextButton {
   right: 0%;
 }
