@@ -8,6 +8,9 @@ const trendingNextButton = document.getElementById('trendingNextButton');
 const topContainer = document.getElementById('topContainer');
 const topPreviousButton = document.getElementById('topPreviousButton');
 const topNextButton = document.getElementById('topNextButton');
+const netflixContainer = document.getElementById('netflixContainer');
+const netflixPreviousButton = document.getElementById('netflixPreviousButton');
+const netflixNextButton = document.getElementById('netflixNextButton');
 
 
 
@@ -41,6 +44,20 @@ topNextButton.addEventListener('click', () => {
 
 topPreviousButton.addEventListener('click', () => {
     topContainer.scrollBy({
+        left: -scrollDistance,
+        behavior: 'smooth'
+    });
+});
+
+netflixNextButton.addEventListener('click', () => {
+    netflixContainer.scrollBy({
+        left: scrollDistance,
+        behavior: 'smooth'
+    });
+});
+
+netflixPreviousButton.addEventListener('click', () => {
+    netflixContainer.scrollBy({
         left: -scrollDistance,
         behavior: 'smooth'
     });
@@ -235,7 +252,6 @@ function fetchNetflix() {
 
 // Initial fetch of netflix  on page load
 fetchNetflix();
-
 
 // Function to fetch and display top 
 function fetchTop() {
