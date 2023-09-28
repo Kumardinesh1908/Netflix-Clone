@@ -3,6 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background: #111;
 }
 
 /* Header styles */
@@ -11,8 +12,10 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background: rgb(54, 53, 53);
-  position: relative;
+  background: black;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 /* Logo styles */
@@ -24,10 +27,11 @@ body {
 label {
   font-size: 24px;
   color: white;
+  width: 65%;
 }
 
 input[type="text"] {
-  width:60%;
+  width: 75%;
   font-size: 24px;
   padding: 5px;
   border: 1px solid #ccc;
@@ -36,17 +40,19 @@ input[type="text"] {
 
 /* "Favorite Movies" button styles */
 .all-favourite-Btn {
-  color: white;
+  color: black;
   font-size: 24px;
   padding: 5px;
-  border: 1px solid white;
+  border: 1px solid transparent;
   border-radius: 4px;
-  background-color: rgb(54, 53, 53);
+  background-color: #d4aa11;
 }
 
 .all-favourite-Btn:hover {
-  color:rgb(54, 53, 53);
-  background-color:white ;
+  color: #d4aa11;
+  background-color: black;
+  border: 1px solid #d4aa11;
+  cursor: pointer;
 }
 
 /* Search results styles */
@@ -54,16 +60,17 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 718px;
-  height: 500px;
-  overflow-y:auto;
+  width: 679px;
+  height: 460px;
+  overflow-y: auto;
   position: absolute;
-  top:100%;
-  left:27.2%;
+  top: 80%;
+  left: 29.3%;
+  visibility: hidden;
 }
 
 li {
-  background-color: rgb(54, 53, 53);
+  background-color: rgb(0, 0, 0);
   padding: 5px;
   border-bottom: 1px solid lightgray;
   display: flex;
@@ -76,7 +83,7 @@ li {
 }
 
 li:hover {
-  background-color: rgba(54, 53, 53,0.9);
+  background-color: rgb(68, 67, 67);
   cursor: pointer;
 }
 
@@ -94,15 +101,19 @@ li:hover {
 /* Search item information styles */
 .search-item-info {
   width: 70%;
-  color:white;
+  color: white;
   overflow: hidden;
+}
+
+.search-item-info span {
+  margin-top: -15px;
 }
 
 /* Favorite button styles */
 .favoriteBtn {
   position: absolute;
   top: 30%;
-  right:10px;
+  right: 10px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -115,4 +126,150 @@ li:hover {
 
 .favoriteBtn:hover {
   background-color: #0056b3;
+}
+
+
+/* ----Trending Movies---- */
+
+.trending h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 40px;
+  margin-bottom: 0px;
+}
+
+#trendingContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#trendingContainer div {
+  width: 250px;
+  height: 340px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#trendingContainer div:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#trendingContainer div img {
+  width: 250px;
+  height: 340px;
+  border-radius: 5px;
+}
+
+.trendingMovies {
+  position: relative;
+}
+
+.trending-navigation-button {
+  width: 80px;
+  height: 340px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 5.3%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.trendingMovies:hover .trending-navigation-button{
+  opacity: 0.5;
+  z-index: 1;
+}
+
+#trendingPreviousButton{
+  left: 15px;
+}
+
+#trendingNextButton {
+  right: 0%;
+}
+
+/* ----Top Movies---- */
+
+.top h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 40px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#topContainer {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#topContainer div {
+  width: 290px;
+  height: 170px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#topContainer div:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#topContainer div img {
+  width: 290px;
+  height: 170px;
+  border-radius: 5px;
+}
+
+.topMovies {
+  position: relative;
+}
+
+.top-navigation-button {
+  width: 80px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 9.8%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.topMovies:hover .top-navigation-button{
+  opacity: 0.5;
+  z-index: 1;
+}
+
+#topPreviousButton{
+  left: 15px;
+}
+
+#topNextButton {
+  right: 0%;
 }

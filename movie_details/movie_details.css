@@ -3,15 +3,15 @@ body,p,h1,p {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 /* Header styling */
 .header {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: #1d1d1d;
+    background: black;
 }
 
 /* Logo styling */
@@ -26,12 +26,18 @@ body,p,h1,p {
     flex-direction: row;
     justify-content: space-around;
     padding: 50px;
-    background: #1d1d1d;
+    background: black;
 }
 
 /* Movie poster styling */
+.movie-poster{
+    width:508px;
+    height: 432px;
+}
 #moviePoster{
-    border: 5px solid white;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
 }
 
 /* Movie information section */
@@ -41,9 +47,14 @@ body,p,h1,p {
 
 /* Movie title styling */
 .movie-info h1{
-    margin-top: 0;
-    margin-bottom: 20px;
     color: #d4aa11;
+    font-size: 50px;
+}
+
+/* Plot styling */
+#plot{
+    line-height: 1.3;
+    font-size: 18px;
 }
 
 /* Movie data styling */
@@ -51,34 +62,7 @@ body,p,h1,p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
-}
-
-/* Styling for movie year and release */
-#movieYear,#release{
-    font-weight: bold;
-    color: white;
-}
-
-/* Rating styling */
-#rating{
-    font-weight: bold;
-    color: white;
-    background-color:#d4aa11 ;
-    padding: 8px;
-}
-
-/* Genre styling */
-.genre{
-    background: #292929;
-    padding:8px;
-    border-radius: 5px;
-    width: 50%;
-}
-
-/* Plot styling */
-#plot{
-    line-height: 20px;
+    gap: 40px;
 }
 
 /* Design class styling */
@@ -94,19 +78,9 @@ body,p,h1,p {
 /* Styling for bold text elements */
 span{
     font-weight: bold;
+    color: #d4aa11;
 }
 
-/* Language styling */
-.language{
-    color:#d4aa11;
-    font-style: italic;
-}
-
-/* Awards logo styling */
-#awards-logo {
-    width: 25px;
-    height: 25px;
-}
 
 /* Favorite button styling */
 .favoriteBtn{
@@ -119,6 +93,7 @@ span{
     border-radius: 5px;
     border:1px solid transparent;
     cursor: pointer;
+    margin: 20px 0;
 }
 
 /* Favorite button hover styling */

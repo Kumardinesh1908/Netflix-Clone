@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: black;
 }
 
 /* Styling for the header */
@@ -11,7 +12,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: rgb(54, 53, 53);
+    background: black;
 }
 
 /* Logo styling */
@@ -22,9 +23,9 @@ body {
 
 /* Styling for the favorite movies section */
 .favorite-Movies {
-    background: rgb(54, 53, 53);
-    width: 99%;
-    margin: 15px auto;
+    background: black;
+    /* width: 99%; */
+    /* margin: 5px auto; */
 }
 
 /* Styling for the favorite movies heading */

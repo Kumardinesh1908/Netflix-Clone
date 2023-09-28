@@ -15,15 +15,43 @@
 
         <!-- Search input and results container -->
         <label for="searchInput">
-            Search Movie : </label>
-        <input type="text" id="searchInput" placeholder="Search movies...">
+            Search Movie :
+            <input type="text" id="searchInput" placeholder="Search movies...">
+        </label>
 
         <!-- Display search results here -->
         <ul id="searchResults"></ul>
 
-        <button id="goToFavoriteMovies" class="all-favourite-Btn">Favorite Movies</button>
+        <button id="goToFavoriteMovies" class="all-favourite-Btn">WatchList</button>
     </header>
 
+    <!-- Trending Movies container -->
+    <section class="trending">
+        <h1>Trending Movies</h1>
+
+        <div class="trendingMovies">
+            <button id="trendingPreviousButton" class="trending-navigation-button">&lt;</button>
+            
+            <!-- Display trending movies here -->
+            <div id="trendingContainer"></div>
+
+            <button id="trendingNextButton" class="trending-navigation-button">&gt;</button>
+        </div>
+    </section>
+    
+    <!-- Top Movies container -->
+    <section class="top">
+        <h1>Top Rated Movies</h1>
+
+        <div class="topMovies">
+            <button id="topPreviousButton" class="top-navigation-button">&lt;</button>
+            
+            <!-- Display top movies here -->
+            <div id="topContainer"></div>
+
+            <button id="topNextButton" class="top-navigation-button">&gt;</button>
+        </div>
+    </section>
     <!-- Included IMDb-specific JavaScript -->
     <script src="index.js"></script>
 </body>

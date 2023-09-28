@@ -25,33 +25,33 @@ function showFavoriteMoviesList() {
         
         // Display each favorite movie as a separate item
         storedFavoriteMovies.forEach(movie => {
-            
-            const shortenedTitle = movie.Title.substring(0, 47);
+            const shortenedTitle = movie.title || movie.name;
+        const date = movie.release_date || movie.first_air_date;
             const favoriteMovieItem = document.createElement('div');
 
             favoriteMovieItem.classList.add('favorite-movie-item');
 
             favoriteMovieItem.innerHTML = `
                 <div class="search-item-thumbnail">
-                    <img src="${movie.Poster}">
+                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
                 </div>
                 <div class="search-item-info">
                     <h3>${shortenedTitle}</h3>
-                    <h4>Year : ${movie.Year}</h4>
+                    <h4>Year : ${date}</h4>
                 </div>
-                <button class="removeBtn" id="${movie.imdbID}">Remove From Favorites</button>
+                <button class="removeBtn" id="${movie.id}">Remove From WatchList</button>
             `;
             favoriteMoviesList.appendChild(favoriteMovieItem);
 
             // Add a click event listener to the remove button
             const removeBtn = favoriteMovieItem.querySelector('.removeBtn');
-            removeBtn.addEventListener('click', () => removeMovieFromFavorites(movie.imdbID));
+            removeBtn.addEventListener('click', () => removeMovieFromFavorites(movie.id));
 
             // Add a click event listener to navigate to respestive movie details page
             const thumbnail = favoriteMovieItem.querySelector('.search-item-thumbnail');
             thumbnail.addEventListener('click', () => {
                 // Construct the URL for the movie details page with the IMDb ID as a parameter
-                const movieDetailsURL = `../movie_details/movie_details.html?imdbID=${movie.imdbID}`;
+                const movieDetailsURL = `../movie_details/movie_details.html?media=${movie.media_type}&id=${movie.id}`;
                 window.location.href = movieDetailsURL;
             });
         });
@@ -63,7 +63,7 @@ function removeMovieFromFavorites(movieId) {
     let storedFavoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
 
     // Find the index of the movie with the given ID in the stored array
-    const movieIndex = storedFavoriteMovies.findIndex(movie => movie.imdbID === movieId);
+    const movieIndex = storedFavoriteMovies.findIndex(movie => movie.id === movieId);
 
     if (movieIndex !== -1) {
         // Remove the movie from the array
