@@ -207,6 +207,35 @@ function fetchTrending() {
 // Initial fetch of trending  on page load
 fetchTrending();
 
+function fetchNetflix() {
+    const netflixContainer = document.getElementById('netflixContainer');
+
+    // Make an API request to TMDb for netflix 
+    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${api_Key}`)
+        .then(response => response.json())
+        .then(data => {
+            const netflix = data.results;
+            console.log(netflix)
+            // Loop through netflix and display each movie
+            netflix.forEach(movie => {
+                const movieItem = document.createElement('div');
+                movieItem.innerHTML = ` <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" alt="${movie.title}"> `;
+
+                netflixContainer.appendChild(movieItem);
+
+                movieItem.addEventListener('click', () => {
+                    window.location.href = `movie_details/movie_details.html?media=tv&id=${movie.id}`;
+                });
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+// Initial fetch of netflix  on page load
+fetchNetflix();
+
 
 // Function to fetch and display top 
 function fetchTop() {
