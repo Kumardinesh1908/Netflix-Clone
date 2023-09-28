@@ -15,7 +15,7 @@ body {
   background: black;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Logo styles */
@@ -256,7 +256,7 @@ li:hover {
   font-weight: 600;
   cursor: pointer;
   position: absolute;
-  top: 9.8%;
+  top: 9.3%;
   border: none;
   display: flex;
   align-items: center;

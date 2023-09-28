@@ -5,6 +5,9 @@ const goToFavoriteMoviesBtn = document.getElementById('goToFavoriteMovies');
 const trendingContainer = document.getElementById('trendingContainer');
 const trendingPreviousButton = document.getElementById('trendingPreviousButton');
 const trendingNextButton = document.getElementById('trendingNextButton');
+const topContainer = document.getElementById('topContainer');
+const topPreviousButton = document.getElementById('topPreviousButton');
+const topNextButton = document.getElementById('topNextButton');
 
 
 
@@ -24,6 +27,20 @@ trendingNextButton.addEventListener('click', () => {
 
 trendingPreviousButton.addEventListener('click', () => {
     trendingContainer.scrollBy({
+        left: -scrollDistance,
+        behavior: 'smooth'
+    });
+});
+
+topNextButton.addEventListener('click', () => {
+    topContainer.scrollBy({
+        left: scrollDistance,
+        behavior: 'smooth'
+    });
+});
+
+topPreviousButton.addEventListener('click', () => {
+    topContainer.scrollBy({
         left: -scrollDistance,
         behavior: 'smooth'
     });
