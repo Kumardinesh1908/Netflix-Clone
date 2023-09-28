@@ -1,7 +1,7 @@
 /* Body styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin: 90px 0 0 0;
   padding: 0;
   background: #111;
 }
@@ -129,589 +129,94 @@ li:hover {
 }
 
 
+/* ----Common Design all Sections---- */
+
+.movie-section h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.movies-box {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.movies-box div {
+  width: 290px;
+  height: 170px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.movie-container div img {
+  width: 290px;
+  height: 170px;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+} 
+
+.movie-container div img:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+.movie-container {
+  position: relative;
+}
+
+.navigation-button{
+  width: 80px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  top: 9.3%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.movie-container:hover .navigation-button{
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.previous{
+  left: 15px;
+}
+
+.next {
+  right: 0%;
+}
+
 /* ----Trending Movies---- */
 
-.trending {
-  margin-top: 90px;;
-}
-
-.trending h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-}
-
-#trendingContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#trendingContainer div {
+.trending-container div {
   width: 250px;
   height: 340px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
 }
 
-#trendingContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#trendingContainer div img {
+.trending-container div img {
   width: 250px;
   height: 340px;
-  border-radius: 5px;
 }
 
-.trendingMovies {
-  position: relative;
-}
-
-.trending-navigation-button {
+.trending-previous, 
+.trending-next{
   width: 80px;
   height: 340px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 5.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.trendingMovies:hover .trending-navigation-button{
-  opacity: 0.6;
-  z-index: 1;
-}
-
-#trendingPreviousButton{
-  left: 15px;
-}
-
-#trendingNextButton {
-  right: 0%;
-}
-
-/* ----Netflix Movies---- */
-
-.netflix h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-#netflixContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#netflixContainer div {
-  width: 290px;
-  height: 170px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
-}
-
-#netflixContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#netflixContainer div img {
-  width: 290px;
-  height: 170px;
-  border-radius: 5px;
-}
-
-.netflixMovies {
-  position: relative;
-}
-
-.netflix-navigation-button {
-  width: 80px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 9.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.netflixMovies:hover .netflix-navigation-button{
-  opacity: 0.8;
-  z-index: 1;
-}
-
-#netflixPreviousButton{
-  left: 15px;
-}
-
-#netflixNextButton {
-  right: 0%;
-}
-
-/* ----Netflix Hindi---- */
-
-.netflixHindi h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-#netflixHindiContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#netflixHindiContainer div {
-  width: 290px;
-  height: 170px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
-}
-
-#netflixHindiContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#netflixHindiContainer div img {
-  width: 290px;
-  height: 170px;
-  border-radius: 5px;
-}
-
-.netflixHindiMovies {
-  position: relative;
-}
-
-.netflixHindi-navigation-button {
-  width: 80px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 9.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.netflixHindiMovies:hover .netflixHindi-navigation-button{
-  opacity: 0.8;
-  z-index: 1;
-}
-
-#netflixHindiPreviousButton{
-  left: 15px;
-}
-
-#netflixHindiNextButton {
-  right: 0%;
-}
-
-/* ----Top Movies---- */
-
-.top h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-#topContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#topContainer div {
-  width: 290px;
-  height: 170px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
-}
-
-#topContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#topContainer div img {
-  width: 290px;
-  height: 170px;
-  border-radius: 5px;
-}
-
-.topMovies {
-  position: relative;
-}
-
-.top-navigation-button {
-  width: 80px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 9.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.topMovies:hover .top-navigation-button{
-  opacity: 0.8;
-  z-index: 1;
-}
-
-#topPreviousButton{
-  left: 15px;
-}
-
-#topNextButton {
-  right: 0%;
-}
-
-/* ----Horror Movies---- */
-
-.horror h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-#horrorContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#horrorContainer div {
-  width: 290px;
-  height: 170px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
-}
-
-#horrorContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#horrorContainer div img {
-  width: 290px;
-  height: 170px;
-  border-radius: 5px;
-}
-
-.horrorMovies {
-  position: relative;
-}
-
-.horror-navigation-button {
-  width: 80px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 9.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.horrorMovies:hover .horror-navigation-button{
-  opacity: 0.8;
-  z-index: 1;
-}
-
-#horrorPreviousButton{
-  left: 15px;
-}
-
-#horrorNextButton {
-  right: 0%;
-}
-
-/* ----Romantic Movies---- */
-
-.romantic h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-#romanticContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#romanticContainer div {
-  width: 290px;
-  height: 170px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
-}
-
-#romanticContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#romanticContainer div img {
-  width: 290px;
-  height: 170px;
-  border-radius: 5px;
-}
-
-.romanticMovies {
-  position: relative;
-}
-
-.romantic-navigation-button {
-  width: 80px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 9.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.romanticMovies:hover .romantic-navigation-button{
-  opacity: 0.8;
-  z-index: 1;
-}
-
-#romanticPreviousButton{
-  left: 15px;
-}
-
-#romanticNextButton {
-  right: 0%;
-}
-
-/* ----Comedy Movies---- */
-
-.comedy h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-#comedyContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#comedyContainer div {
-  width: 290px;
-  height: 170px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
-}
-
-#comedyContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#comedyContainer div img {
-  width: 290px;
-  height: 170px;
-  border-radius: 5px;
-}
-
-.comedyMovies {
-  position: relative;
-}
-
-.comedy-navigation-button {
-  width: 80px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 9.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.comedyMovies:hover .comedy-navigation-button{
-  opacity: 0.8;
-  z-index: 1;
-}
-
-#comedyPreviousButton{
-  left: 15px;
-}
-
-#comedyNextButton {
-  right: 0%;
-}
-
-/* ----Action Movies---- */
-
-.action h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin-left: 15px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-#actionContainer {
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#actionContainer div {
-  width: 290px;
-  height: 170px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: all 0.5s ease-in-out;
-}
-
-#actionContainer div:hover {
-  transform: scale(1.1);
-  border-radius: 5px;
-}
-
-#actionContainer div img {
-  width: 290px;
-  height: 170px;
-  border-radius: 5px;
-}
-
-.actionMovies {
-  position: relative;
-}
-
-.action-navigation-button {
-  width: 80px;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  position: absolute;
-  top: 9.3%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.actionMovies:hover .action-navigation-button{
-  opacity: 0.8;
-  z-index: 1;
-}
-
-#actionPreviousButton{
-  left: 15px;
-}
-
-#actionNextButton {
-  right: 0%;
+  top: 5.3%; 
 }

@@ -37,24 +37,17 @@ async function displayMovieDetails() {
 
         console.log(movieDetails)
 
-        var spokenlanguage;
-        if(movieDetails.original_language === "hi" || movieDetails.languages === "hi"){
-            spokenlanguage = "Hindi";
-        }
-        if(movieDetails.original_language === "en" || movieDetails.languages === "en"){
-            spokenlanguage = "English";
-        }
-
+        var spokenlanguage = movieDetails.spoken_languages.map(language => language.english_name)
         var genreNames = movieDetails.genres.map(genre => genre.name);
 
         // Setting the values of various elements with movie details
         movieTitle.textContent = movieDetails.name || movieDetails.title;
-        moviePoster.src =  `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
+        moviePoster.src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
         movieYear.textContent = `${movieDetails.release_date || movieDetails.first_air_date}`;
         rating.textContent = movieDetails.vote_average;
         genre.innerText = genreNames.join(', ');
         plot.textContent = movieDetails.overview;
-        language.textContent = `${spokenlanguage}`;
+        language.textContent = spokenlanguage.join(', ');
 
         // Updating the favorite button text and adding a click event listener to toggle favorites
         if (favoriteMovies.some(favoriteMovie => favoriteMovie.id === movieDetails.id)) {

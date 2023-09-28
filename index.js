@@ -10,188 +10,83 @@ goToFavoriteMoviesBtn.addEventListener('click', () => {
 
 const scrollDistance = 900;
 
-const trendingContainer = document.getElementById('trendingContainer');
-const trendingPreviousButton = document.getElementById('trendingPreviousButton');
-const trendingNextButton = document.getElementById('trendingNextButton');
+// Define a function to handle scrolling
+function setupScroll(containerClass, previousButtonClass, nextButtonClass) {
+    const containers = document.querySelectorAll(`.${containerClass}`);
+    const previousButtons = document.querySelectorAll(`.${previousButtonClass}`);
+    const nextButtons = document.querySelectorAll(`.${nextButtonClass}`);
 
-trendingNextButton.addEventListener('click', () => {
-    trendingContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
+    containers.forEach((container, index) => {
+        const previousButton = previousButtons[index];
+        const nextButton = nextButtons[index];
+
+        nextButton.addEventListener('click', () => {
+            container.scrollBy({
+                left: scrollDistance,
+                behavior: 'smooth',
+            });
+        });
+
+        previousButton.addEventListener('click', () => {
+            container.scrollBy({
+                left: -scrollDistance,
+                behavior: 'smooth',
+            });
+        });
     });
-});
+}
 
-trendingPreviousButton.addEventListener('click', () => {
-    trendingContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-const topContainer = document.getElementById('topContainer');
-const topPreviousButton = document.getElementById('topPreviousButton');
-const topNextButton = document.getElementById('topNextButton');
-
-topNextButton.addEventListener('click', () => {
-    topContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-topPreviousButton.addEventListener('click', () => {
-    topContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-const netflixContainer = document.getElementById('netflixContainer');
-const netflixPreviousButton = document.getElementById('netflixPreviousButton');
-const netflixNextButton = document.getElementById('netflixNextButton');
-
-netflixNextButton.addEventListener('click', () => {
-    netflixContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-netflixPreviousButton.addEventListener('click', () => {
-    netflixContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-const netflixHindiContainer = document.getElementById('netflixHindiContainer');
-const netflixHindiPreviousButton = document.getElementById('netflixHindiPreviousButton');
-const netflixHindiNextButton = document.getElementById('netflixHindiNextButton');
-
-netflixHindiNextButton.addEventListener('click', () => {
-    netflixHindiContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-netflixHindiPreviousButton.addEventListener('click', () => {
-    netflixHindiContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-const horrorContainer = document.getElementById('horrorContainer');
-const horrorPreviousButton = document.getElementById('horrorPreviousButton');
-const horrorNextButton = document.getElementById('horrorNextButton');
-
-horrorNextButton.addEventListener('click', () => {
-    horrorContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-horrorPreviousButton.addEventListener('click', () => {
-    horrorContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-const romanticContainer = document.getElementById('romanticContainer');
-const romanticPreviousButton = document.getElementById('romanticPreviousButton');
-const romanticNextButton = document.getElementById('romanticNextButton');
-
-romanticNextButton.addEventListener('click', () => {
-    romanticContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-romanticPreviousButton.addEventListener('click', () => {
-    romanticContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-const comedyContainer = document.getElementById('comedyContainer');
-const comedyPreviousButton = document.getElementById('comedyPreviousButton');
-const comedyNextButton = document.getElementById('comedyNextButton');
-
-comedyNextButton.addEventListener('click', () => {
-    comedyContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-comedyPreviousButton.addEventListener('click', () => {
-    comedyContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-const actionContainer = document.getElementById('actionContainer');
-const actionPreviousButton = document.getElementById('actionPreviousButton');
-const actionNextButton = document.getElementById('actionNextButton');
-
-actionNextButton.addEventListener('click', () => {
-    actionContainer.scrollBy({
-        left: scrollDistance,
-        behavior: 'smooth'
-    });
-});
-
-actionPreviousButton.addEventListener('click', () => {
-    actionContainer.scrollBy({
-        left: -scrollDistance,
-        behavior: 'smooth'
-    });
-});
+// Set up scrolling for each section
+setupScroll('trending-container', 'trending-previous', 'trending-next');
+setupScroll('netflix-container', 'netflix-previous', 'netflix-next');
+setupScroll('netflixShows-container', 'netflixShows-previous', 'netflixShows-next');
+setupScroll('top-container', 'top-previous', 'top-next');
+setupScroll('horror-container', 'horror-previous', 'horror-next');
+setupScroll('comedy-container', 'comedy-previous', 'comedy-next');
+setupScroll('action-container', 'action-previous', 'action-next');
+setupScroll('romantic-container', 'romantic-previous', 'romantic-next');
 
 // TMDB API key
 const api_Key = '4626200399b08f9d04b72348e3625f15';
 
 // Function to fetch and display movies or TV shows
-function fetchMedia(containerId, endpoint) {
-    const container = document.getElementById(containerId);
-    fetch(`https://api.themoviedb.org/3/${endpoint}&api_key=${api_Key}`)
-        .then(response => response.json())
-        .then(data => {
-            const media = data.results;
-            media.forEach(item => {
-                const itemElement = document.createElement('div');
-                const imageUrl = containerId === 'trendingContainer' ? item.poster_path : item.backdrop_path;
-                itemElement.innerHTML = ` <img src="https://image.tmdb.org/t/p/w500${imageUrl}" alt="${item.title || item.name}"> `;
-                container.appendChild(itemElement);
+function fetchMedia(containerClass, endpoint, mediaType) {
+    const containers = document.querySelectorAll(`.${containerClass}`);
+    containers.forEach((container) => {
+        fetch(`https://api.themoviedb.org/3/${endpoint}&api_key=${api_Key}`)
+            .then(response => response.json())
+            .then(data => {
+                const fetchResults = data.results;
+                fetchResults.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    const imageUrl = containerClass === 'trending-container' ? item.poster_path : item.backdrop_path;
+                    itemElement.innerHTML = ` <img src="https://image.tmdb.org/t/p/w500${imageUrl}" alt="${item.title || item.name}"> `;
+                    container.appendChild(itemElement);
 
-                itemElement.addEventListener('click', () => {
-                    // const mediaType = item.media_type || 'movie';
-                    const mediaType = containerId === 'netflixContainer' ? 'tv' : item.media_type;
-                    window.location.href = `movie_details/movie_details.html?media=${mediaType}&id=${item.id}`;
+                    itemElement.addEventListener('click', () => {
+                        const media_Type = item.media_type || mediaType
+                        window.location.href = `movie_details/movie_details.html?media=${media_Type}&id=${item.id}`;
+                    });
                 });
-            });
-        })
-        .catch(error => {
-            console.error(error);
+            })
+            .catch(error => {
+                console.error(error);
 
-        });
+            });
+    })
 }
 
-// Initial fetch of trending, Netflix, top rated, horror, comedy, action and romantic on page load
-fetchMedia('trendingContainer', 'trending/all/week?');
-fetchMedia('netflixContainer', 'discover/tv?with_networks=213');
-fetchMedia('netflixHindiContainer', 'discover/tv?');
-fetchMedia('topContainer', 'movie/top_rated?');
-fetchMedia('horrorContainer', 'discover/movie?with_genres=27');
-fetchMedia('comedyContainer', 'discover/movie?with_genres=35');
-fetchMedia('actionContainer', 'discover/movie?with_genres=28');
-fetchMedia('romanticContainer', 'discover/movie?with_genres=10749');
+// Initial fetch of trending, Netflix, top rated, horror, comedy, action, and romantic on page load
+fetchMedia('trending-container', 'trending/all/week?');
+fetchMedia('netflix-container', 'discover/tv?with_networks=213', 'tv');
+fetchMedia('netflixShows-container', 'discover/tv?', 'tv');
+fetchMedia('top-container', 'movie/top_rated?', 'movie');
+fetchMedia('horror-container', 'discover/movie?with_genres=27', 'movie');
+fetchMedia('comedy-container', 'discover/movie?with_genres=35', 'movie');
+fetchMedia('action-container', 'discover/movie?with_genres=28', 'movie');
+fetchMedia('romantic-container', 'discover/movie?with_genres=10749', 'movie');
+
+
 
 // Variables to handle favorite movies list
 const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
@@ -200,11 +95,11 @@ const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
 searchInput.addEventListener('input', async () => {
     const query = searchInput.value;
     if (query.length > 2) {
-            const results = await fetchSearchResults(query);
-            if (results.length !== 0) {
-                searchResults.style.visibility = "visible";
-            }
-            displaySearchResults(results);
+        const results = await fetchSearchResults(query);
+        if (results.length !== 0) {
+            searchResults.style.visibility = "visible";
+        }
+        displaySearchResults(results);
     } else {
         searchResults.innerHTML = '';
         searchResults.style.visibility = "hidden";
