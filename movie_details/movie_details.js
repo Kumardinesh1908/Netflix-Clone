@@ -67,7 +67,7 @@ async function displayMovieDetails() {
         console.log("trailer",trailer)
         
         if (trailer) {
-            iframe.src = `https://www.youtube.com/embed/${trailer.key}`;
+            iframe.src = `https://www.youtube.com/embed/${trailer.key}?autoplay=1`;
             moviePoster.style.display="none";
         } else {
             iframe.style.display="none";
@@ -94,7 +94,6 @@ function toggleFavorite(movieDetails) {
 window.addEventListener('load', () => {
     displayMovieDetails();
 });
-
 
 
 // Function to fetch video details (trailers) for a movie or TV show
