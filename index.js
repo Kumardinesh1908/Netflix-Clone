@@ -16,7 +16,7 @@ goToFavoriteMoviesBtn.addEventListener('click', () => {
     window.location.href = 'favorite_movies/favorite_movies.html';
 });
 
-const scrollDistance = 800;
+const scrollDistance = 900;
 
 trendingNextButton.addEventListener('click', () => {
     trendingContainer.scrollBy({
