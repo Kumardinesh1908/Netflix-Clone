@@ -206,6 +206,7 @@ function addToFavorites(movie) {
 document.addEventListener('click', event => {
     if (!searchResults.contains(event.target)) {
         searchResults.innerHTML = '';
+        searchResults.style.visibility = "hidden";
     }
 });
 
