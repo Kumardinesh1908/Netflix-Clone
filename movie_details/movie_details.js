@@ -12,6 +12,7 @@ const rating = document.getElementById('rating');
 const genre = document.getElementById('genre');
 const plot = document.getElementById('plot');
 const language = document.getElementById("language");
+const iframe = document.getElementById("iframe");
 const favoriteBtn = document.querySelector('.favoriteBtn');
 const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
 
@@ -34,8 +35,6 @@ async function fetchMovieDetails(id) {
 async function displayMovieDetails() {
     try {
         const movieDetails = await fetchMovieDetails(id);
-
-        console.log(movieDetails)
 
         var spokenlanguage = movieDetails.spoken_languages.map(language => language.english_name)
         var genreNames = movieDetails.genres.map(genre => genre.name);
@@ -60,6 +59,22 @@ async function displayMovieDetails() {
     } catch (error) {
         console.error('Error fetching movie details:', error);
     }
+
+    try{
+        const videoDetails = await fetchVideoDetails(id);
+        console.log("videoDetails",videoDetails)
+        const trailer = videoDetails.find(video => video.type === 'Trailer');
+        console.log("trailer",trailer)
+        
+        if (trailer) {
+            iframe.src = `https://www.youtube.com/embed/${trailer.key}`;
+            moviePoster.style.display="none";
+        } else {
+            iframe.style.display="none";
+        }
+    }catch(error){
+        iframe.style.display="none";
+    }
 }
 
 // Function to toggle adding/removing from favorites
@@ -81,3 +96,10 @@ window.addEventListener('load', () => {
 });
 
 
+
+// Function to fetch video details (trailers) for a movie or TV show
+async function fetchVideoDetails(id) {
+    const response = await fetch(`https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${api_Key}`);
+    const data = await response.json();
+    return data.results;
+}
