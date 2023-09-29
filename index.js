@@ -60,7 +60,7 @@ function fetchMedia(containerClass, endpoint, mediaType) {
                 const fetchResults = data.results;
                 fetchResults.forEach(item => {
                     const itemElement = document.createElement('div');
-                    const imageUrl = containerClass === 'trending-container' ? item.poster_path : item.backdrop_path;
+                    const imageUrl = containerClass === 'netflix-container' ? item.poster_path : item.backdrop_path;
                     itemElement.innerHTML = ` <img src="https://image.tmdb.org/t/p/w500${imageUrl}" alt="${item.title || item.name}"> `;
                     container.appendChild(itemElement);
 

@@ -302,24 +302,20 @@ li:hover {
   right: 0%;
 }
 
-/* ----Trending Movies---- */
+/* ----Netflix Movies---- */
 
-#trending {
-  margin-top: 0px;
-}
-
-.trending-container div {
+.netflix-container div {
   width: 250px;
   height: 340px;
 }
 
-.trending-container div img {
+.netflix-container div img {
   width: 250px;
   height: 340px;
 }
 
-.trending-previous,
-.trending-next {
+.netflix-previous,
+.netflix-next {
   width: 80px;
   height: 340px;
   top: 5.3%;
