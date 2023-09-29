@@ -10,7 +10,7 @@ body,p,h1,p {
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: black;
 }
 
@@ -18,21 +18,22 @@ body,p,h1,p {
 .logo {
     width: 8%;
     cursor: pointer;
+    margin: 20px;
 }
 
 /* Movie details container */
 .movie-details {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 50px;
+    justify-content: space-between;
+    padding: 10px 50px 0px 20px;
     background: black;
 }
 
 /* Movie poster styling */
 .movie-poster{
-    width:508px;
-    height: 432px;
+    width:750px;
+    height: 460px;
 }
 #moviePoster{
     width: 100%;
@@ -42,7 +43,7 @@ body,p,h1,p {
 
 /* Movie information section */
 .movie-info {
-    width: 55%;
+    width: 40%;
 }
 
 /* Movie title styling */
@@ -53,8 +54,9 @@ body,p,h1,p {
 
 /* Plot styling */
 #plot{
-    line-height: 1.3;
+    line-height: 1.2;
     font-size: 18px;
+    text-align: justify;
 }
 
 /* Movie data styling */
@@ -81,15 +83,18 @@ span{
     color: #d4aa11;
 }
 
+p{
+    font-weight: bold;
+}
 
 /* Favorite button styling */
 .favoriteBtn{
     color:white;
-    font-weight: bolder;
+    font-weight: 600;
     padding: 7px;
     text-align: center;
     width:30%;
-    background: #d4aa11;
+    background: rgb(201, 22, 22);
     border-radius: 5px;
     border:1px solid transparent;
     cursor: pointer;
@@ -98,9 +103,9 @@ span{
 
 /* Favorite button hover styling */
 .favoriteBtn:hover{
-    background: #1d1d1d;
-    color:#d4aa11;
-    border:1px solid #d4aa11
+    background: black;
+    color:rgb(201, 22, 22);
+    border:1px solid rgb(201, 22, 22)
 }
 
 

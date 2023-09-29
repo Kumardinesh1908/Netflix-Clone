@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 90px 0 0 0;
   padding: 0;
-  background: #111;
+  background: #0c0c0c;
 }
 
 /* Header styles */
@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background: black;
   position: fixed;
   top: 0;
@@ -19,7 +19,8 @@ body {
 }
 
 /* Logo styles */
-.logo {
+#netflix-logo{
+  margin: 20px;
   width: 8%;
 }
 
@@ -40,18 +41,19 @@ input[type="text"] {
 
 /* "Favorite Movies" button styles */
 .all-favourite-Btn {
-  color: black;
+  color: white;
   font-size: 24px;
-  padding: 5px;
+  margin-right: 30px;
+  padding: 5px 15px;
   border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: #d4aa11;
+  border-radius: 6px;
+  background-color: rgb(201, 22, 22);
 }
 
 .all-favourite-Btn:hover {
-  color: #d4aa11;
+  color: rgb(201, 22, 22);
   background-color: black;
-  border: 1px solid #d4aa11;
+  border: 1px solid rgb(201, 22, 22);
   cursor: pointer;
 }
 
@@ -60,12 +62,12 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 673px;
+  width: 670px;
   height: 460px;
   overflow-y: auto;
   position: absolute;
   top: 80%;
-  left: 29.3%;
+  left: 29.1%;
   visibility: hidden;
 }
 
@@ -77,13 +79,13 @@ li {
   gap: 20px;
   align-items: center;
   width: 100%;
-  height: 15%;
+  height: 20%;
   box-sizing: border-box;
   position: relative;
 }
 
 li:hover {
-  background-color: rgb(68, 67, 67);
+  background-color: #0c0c0c;
   cursor: pointer;
 }
 
@@ -100,23 +102,20 @@ li:hover {
 
 /* Search item information styles */
 .search-item-info {
-  width: 70%;
+  width: 60%;
   color: white;
-  overflow: hidden;
+  text-transform: capitalize;
 }
 
-.search-item-info span {
-  margin-top: -15px;
-}
 
 /* Favorite button styles */
 .favoriteBtn {
   position: absolute;
   top: 30%;
   right: 10px;
-  background-color: #007bff;
+  background-color: rgb(201, 22, 22);
   color: white;
-  border: none;
+  border: 1px solid black;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -125,7 +124,9 @@ li:hover {
 }
 
 .favoriteBtn:hover {
-  background-color: #0056b3;
+  background-color: black;
+  border: 1px solid rgb(201, 22, 22);
+  color: rgb(201, 22, 22);
 }
 
 
@@ -144,7 +145,12 @@ li:hover {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  overflow: hidden;
+  overflow-x: scroll;
+}
+
+/* Apply custom styles to the scrollbar */
+.movies-box::-webkit-scrollbar {
+  height: 1px;
 }
 
 .movies-box div {
@@ -172,7 +178,7 @@ li:hover {
 }
 
 .navigation-button{
-  width: 80px;
+  width: 60px;
   height: 170px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 5px;

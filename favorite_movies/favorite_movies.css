@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: black;
 }
 
@@ -19,21 +19,14 @@ body {
 .logo {
     width: 8%;
     cursor: pointer;
-}
-
-/* Styling for the favorite movies section */
-.favorite-Movies {
-    background: black;
-    /* width: 99%; */
-    /* margin: 5px auto; */
+    margin: 20px;
 }
 
 /* Styling for the favorite movies heading */
-.favorite-Movies h1 {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
+.header h1 {
+    margin-right: 38%;
     color: white;
+    font-weight: 100;
 }
 
 /* Styling for the list of favorite movies */
@@ -41,12 +34,13 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    padding: 20px;
+    /* justify-content: space-evenly; */
 }
 
 /* Styling for each individual favorite movie item */
 .favorite-movie-item {
-    width: 18%;
+    width: 20%;
     height: auto;
     border: 1px solid white;
     border-radius: 5px;
@@ -76,7 +70,7 @@ h3 {
 
 /* Styling for the remove button */
 .removeBtn {
-    background-color: red;
+    background-color: rgb(201, 22, 22);
     color: white;
     font-size: 16px;
     font-weight: bold;

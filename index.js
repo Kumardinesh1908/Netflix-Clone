@@ -140,7 +140,6 @@ function displaySearchResults(results) {
     results.map(movie => {
         const shortenedTitle = movie.title || movie.name;
         const date = movie.release_date || movie.first_air_date;
-        const movieItem = document.createElement('li');
 
         let buttonText = "Add to WatchList"; // Set default button text
 
@@ -148,6 +147,8 @@ function displaySearchResults(results) {
         if (favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id)) {
             buttonText = "Go to WatchList"; // Change button text
         }
+        
+        const movieItem = document.createElement('li');
 
         // Create HTML structure for each movie
         movieItem.innerHTML = `
@@ -156,7 +157,7 @@ function displaySearchResults(results) {
                                 </div>
                                 <div class ="search-item-info">
                                     <h3>${shortenedTitle}</h3>
-                                    <p>${movie.media_type} <span>${date}</span></p>
+                                    <p>${movie.media_type} <span> &nbsp; ${date}</span></p>
                                 </div>
                                 <button class="favoriteBtn" id="${movie.id}">${buttonText}</button>   
                                 `;
