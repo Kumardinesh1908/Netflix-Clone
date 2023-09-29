@@ -1,7 +1,7 @@
 /* Body styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 90px 0 0 0;
+  margin: 0 0 0 0;
   padding: 0;
   background: #0c0c0c;
 }
@@ -12,38 +12,39 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: black;
+  background: rgb(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   z-index: 2;
 }
 
 /* Logo styles */
-#netflix-logo{
-  margin: 20px;
+#netflix-logo {
+  margin: 20px 20px 20px 40px;
   width: 8%;
 }
 
 /* Label and input styles */
-label {
-  font-size: 24px;
-  color: white;
-  width: 65%;
-}
 
 input[type="text"] {
-  width: 75%;
+  width: 48.8%;
   font-size: 24px;
   padding: 5px;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  border: transparent;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+input::-webkit-input-placeholder {
+  color: black;
 }
 
 /* "Favorite Movies" button styles */
 .all-favourite-Btn {
-  color: white;
+  color: rgb(0, 0, 0, 0.8);
   font-size: 24px;
-  margin-right: 30px;
+  margin-right: 50px;
   padding: 5px 15px;
   border: 1px solid transparent;
   border-radius: 6px;
@@ -67,12 +68,27 @@ ul {
   overflow-y: auto;
   position: absolute;
   top: 80%;
-  left: 29.1%;
+  left: 24.4%;
   visibility: hidden;
 }
 
+ul::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: #444444;
+}
+
 li {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   padding: 5px;
   border-bottom: 1px solid lightgray;
   display: flex;
@@ -85,7 +101,7 @@ li {
 }
 
 li:hover {
-  background-color: #0c0c0c;
+  background-color: #181818;
   cursor: pointer;
 }
 
@@ -106,7 +122,6 @@ li:hover {
   color: white;
   text-transform: capitalize;
 }
-
 
 /* Favorite button styles */
 .favoriteBtn {
@@ -129,6 +144,85 @@ li:hover {
   color: rgb(201, 22, 22);
 }
 
+/* ----Banner---- */
+
+#banner-container {
+  width: 98.75vw;
+  height: 72.5vh;
+  margin-bottom: 7px;
+  overflow: hidden;
+  position: relative;
+}
+
+#banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+#banner-title {
+  position: absolute;
+  top: 44%;
+  left: 40px;
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+#button-container {
+  position: absolute;
+  top: 68%;
+  left: 42px;
+  display: flex;
+  gap: 15px;
+}
+
+#more-info,
+#play-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 20px;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  transition: 0.3s;
+}
+
+#play-button {
+  background-color: #fff;
+  color: #000;
+  padding: 7px 25px;
+}
+
+#play-button:hover{
+  background-color: rgba(109, 109, 110, .9);
+}
+
+#more-info {
+  background-color: rgba(109, 109, 110, .7);
+  color: #fff;
+}
+
+#more-info:hover{
+  background-color: rgb(109, 109, 110);
+}
+
+#info-icon {
+  width: 18px;
+  height: 18px;
+}
+
+#empty{
+  width: 98.75vw;
+  height: 7.4rem;
+    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.61),#111);
+    position: absolute;
+    bottom: 0;
+}
 
 /* ----Common Design all Sections---- */
 
@@ -166,7 +260,7 @@ li:hover {
   height: 170px;
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
-} 
+}
 
 .movie-container div img:hover {
   transform: scale(1.1);
@@ -177,7 +271,7 @@ li:hover {
   position: relative;
 }
 
-.navigation-button{
+.navigation-button {
   width: 60px;
   height: 170px;
   background-color: rgba(255, 255, 255, 0.3);
@@ -195,12 +289,12 @@ li:hover {
   transition: opacity 0.5s ease-in-out;
 }
 
-.movie-container:hover .navigation-button{
+.movie-container:hover .navigation-button {
   opacity: 0.8;
   z-index: 1;
 }
 
-.previous{
+.previous {
   left: 15px;
 }
 
@@ -209,6 +303,10 @@ li:hover {
 }
 
 /* ----Trending Movies---- */
+
+#trending {
+  margin-top: 0px;
+}
 
 .trending-container div {
   width: 250px;
@@ -220,9 +318,9 @@ li:hover {
   height: 340px;
 }
 
-.trending-previous, 
-.trending-next{
+.trending-previous,
+.trending-next {
   width: 80px;
   height: 340px;
-  top: 5.3%; 
+  top: 5.3%;
 }

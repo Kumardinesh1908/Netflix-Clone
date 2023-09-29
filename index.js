@@ -49,6 +49,7 @@ setupScroll('romantic-container', 'romantic-previous', 'romantic-next');
 // TMDB API key
 const api_Key = '4626200399b08f9d04b72348e3625f15';
 
+
 // Function to fetch and display movies or TV shows
 function fetchMedia(containerClass, endpoint, mediaType) {
     const containers = document.querySelectorAll(`.${containerClass}`);
@@ -68,6 +69,23 @@ function fetchMedia(containerClass, endpoint, mediaType) {
                         window.location.href = `movie_details/movie_details.html?media=${media_Type}&id=${item.id}`;
                     });
                 });
+
+                if (containerClass === 'netflix-container') {
+                    const randomIndex = Math.floor(Math.random() * fetchResults.length);
+                    const randomMovie = fetchResults[randomIndex];
+                    
+                    const banner = document.getElementById('banner');
+                    const play = document.getElementById('play-button');
+                    const info = document.getElementById('more-info');
+                    const title = document.getElementById('banner-title');
+
+                    banner.src = `https://image.tmdb.org/t/p/original/${randomMovie.backdrop_path}`;
+                    title.textContent = randomMovie.title || randomMovie.name;
+                    (play && info).addEventListener('click', () => {
+                        const media_Type = randomMovie.media_type || mediaType
+                        window.location.href = `movie_details/movie_details.html?media=${media_Type}&id=${randomMovie.id}`;
+                    });
+                }
             })
             .catch(error => {
                 console.error(error);
@@ -75,6 +93,7 @@ function fetchMedia(containerClass, endpoint, mediaType) {
             });
     })
 }
+
 
 // Initial fetch of trending, Netflix, top rated, horror, comedy, action, and romantic on page load
 fetchMedia('trending-container', 'trending/all/week?');
@@ -147,7 +166,7 @@ function displaySearchResults(results) {
         if (favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id)) {
             buttonText = "Go to WatchList"; // Change button text
         }
-        
+
         const movieItem = document.createElement('li');
 
         // Create HTML structure for each movie
