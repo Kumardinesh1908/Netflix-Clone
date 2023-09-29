@@ -9,9 +9,9 @@ body {
 /* Header styles */
 .header {
   width: 100vw;
+  height: 70px;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   background: rgb(0, 0, 0, 0.2);
   position: fixed;
@@ -21,30 +21,19 @@ body {
 
 /* Logo styles */
 #netflix-logo {
-  margin: 15px 20px 15px 20px;
+  margin: 15px 0 15px 1.5%;
   width: 120px;
-}
-
-/* input styles */
-input[type="text"] {
-  width: 48.8%;
-  font-size: 24px;
-  padding: 5px;
-  border-radius: 5px;
-  border: transparent;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-input::-webkit-input-placeholder {
-  color: black;
+  height: 40px;
 }
 
 /* "Favorite Movies" button styles */
 .all-favourite-Btn {
-  color: rgb(0, 0, 0, 0.8);
-  font-size: 24px;
-  margin-right: 50px;
+  width: 137px;
+  height: 40px;
+  margin: 15px 3.5% 15px 0px;
   padding: 5px 15px;
+  font-size: 24px;
+  color: rgb(0, 0, 0, 0.8);
   border: 1px solid transparent;
   border-radius: 6px;
   background-color: rgb(201, 22, 22);
@@ -57,49 +46,68 @@ input::-webkit-input-placeholder {
   cursor: pointer;
 }
 
-/* Search results styles */
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 670px;
+.input-container {
+  width: 655px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* input styles */
+input {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 24px;
+  border-radius: 5px;
+  border: transparent;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+input::-webkit-input-placeholder {
+  color: black;
+}
+
+#searchResults {
+  width: 655px;
   height: 460px;
   overflow-y: auto;
   position: absolute;
-  top: 80%;
-  left: 24.4%;
+  top: 57px;
   visibility: hidden;
 }
 
-ul::-webkit-scrollbar {
+#searchResults::-webkit-scrollbar {
   width: 8px;
   border-radius: 5px;
   background-color: lightgrey;
 }
 
-ul::-webkit-scrollbar-thumb {
+#searchResults::-webkit-scrollbar-thumb {
   background-color: #555;
   border-radius: 5px;
 }
 
-ul::-webkit-scrollbar-thumb:hover {
+#searchResults::-webkit-scrollbar-thumb:hover {
   background-color: #444444;
 }
 
-li {
-  background-color: black;
-  padding: 5px;
-  border-bottom: 1px solid lightgray;
-  display: flex;
-  gap: 20px;
-  align-items: center;
+.movie-list {
   width: 100%;
   height: 20%;
   box-sizing: border-box;
+  padding: 5px;
+  border-bottom: 1px solid lightgray;
+  background: #000;
+  display: flex;
+  gap: 20px;
+  align-items: center;
   position: relative;
 }
 
-li:hover {
+.movie-list:hover {
   background-color: #181818;
   cursor: pointer;
 }
@@ -117,9 +125,24 @@ li:hover {
 
 /* Search item information styles */
 .search-item-info {
-  width: 60%;
+  width: 45%;
+  height: 100%;
   color: white;
   text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.search-item-info h3 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.search-item-info p {
+  margin: 0;
+  padding: 0;
 }
 
 /* Favorite button styles */
@@ -159,20 +182,23 @@ li:hover {
   object-fit: cover;
   object-position: center top;
 }
+#details-container{
+  position: absolute;
+  bottom: 18%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 
 #banner-title {
-  position: absolute;
-  top: 44%;
-  left: 40px;
+  margin: 0;
   color: white;
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 800;
 }
 
 #button-container {
-  position: absolute;
-  top: 68%;
-  left: 42px;
   display: flex;
   gap: 15px;
 }
@@ -186,7 +212,7 @@ li:hover {
   border: none;
   font-size: 1rem;
   font-weight: 700;
-  border-radius: 0.2vw;
+  border-radius: 3px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -197,7 +223,7 @@ li:hover {
   padding: 7px 25px;
 }
 
-#play-button:hover{
+#play-button:hover {
   background-color: rgba(109, 109, 110, .9);
 }
 
@@ -206,7 +232,7 @@ li:hover {
   color: #fff;
 }
 
-#more-info:hover{
+#more-info:hover {
   background-color: rgb(109, 109, 110);
 }
 
@@ -215,12 +241,12 @@ li:hover {
   height: 18px;
 }
 
-#empty{
+#empty {
   width: 98.75vw;
   height: 7.4rem;
-    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.61),#111);
-    position: absolute;
-    bottom: 0;
+  background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, .61), #111);
+  position: absolute;
+  bottom: 0;
 }
 
 /* ----Common Design all Sections---- */
@@ -254,14 +280,14 @@ li:hover {
   transition: all 0.5s ease-in-out;
 }
 
-.movie-container div img {
+.movies-box div img {
   width: 290px;
   height: 170px;
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
 }
 
-.movie-container div img:hover {
+.movies-box div img:hover {
   transform: scale(1.1);
   border-radius: 5px;
 }
@@ -318,4 +344,114 @@ li:hover {
   width: 80px;
   height: 340px;
   top: 5.3%;
+}
+
+
+/* ----Media Query---- */
+
+@media only screen and (max-width: 560px) {
+  .header {
+    flex-direction: column;
+    height: 120px;
+    position: fixed;
+    top: 0;
+  }
+
+  .all-favourite-Btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .input-container {
+    width: 94.3%;
+    margin-left: 2.3%;
+    margin-right: 2.3%;
+    position: absolute;
+    top: 55px;
+  }
+
+  #searchResults {
+    width: 100%;
+    height: 300px;
+    top: 43px;
+  }
+
+  .movie-list {
+    gap: 10px;
+  }
+
+  .search-item-thumbnail {
+    width: 12%;
+  }
+
+  .search-item-info h3 {
+    font-size: 0.8rem;
+  }
+
+  .search-item-info p {
+    font-size: 0.7rem;
+  }
+
+  .favoriteBtn {
+    right: 5px;
+    font-size: 12px;
+  }
+  #banner-container {
+    width: 100vw;
+  }
+  #banner-title {
+    font-size: 40px;
+    
+  }
+  #details-container{
+    bottom: 12%;
+
+  }
+  #empty{
+    width: 100vw;
+  } 
+
+  .movie-section h1{
+    font-size: 1.2rem;
+  }
+
+  .movies-box{
+    gap: 4px;
+  }
+
+  .movies-box div {
+    width: 120px;
+    height: 90px;
+    margin: 8px 0;
+  }
+
+  .movies-box div img{
+    width: 120px;
+    height: 90px;
+  }
+
+  .navigation-button{
+    width: 40px;
+    height: 90px;
+    top: 8%;
+    font-size: 1.6rem;
+  }
+
+  .netflix-container div {
+    width: 120px;
+    height: 150px;
+  }
+  
+  .netflix-container div img {
+    width: 120px;
+    height: 150px;
+  }
+  
+  .netflix-previous,
+  .netflix-next {
+    width: 40px;
+    height: 150px;
+    top: 5%;
+  }
 }

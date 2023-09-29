@@ -13,30 +13,28 @@
     <!-- Header container -->
     <header class="header">
         <img src="/assests/netflix.png" alt="logo" id="netflix-logo">
-
-        <!-- Search input and results container -->
-        <!-- <label for="searchInput"> -->
-        <input type="text" id="searchInput" placeholder="Search movies...">
-        <!-- </label> -->
-
-        <!-- Display search results here -->
-        <ul id="searchResults"></ul>
-
+        <div class="input-container">
+            <input type="text" id="searchInput" placeholder="Search movies...">
+            <!-- Display search results here -->
+            <div id="searchResults"></div>
+        </div>
         <button id="goToFavoriteMovies" class="all-favourite-Btn">WatchList</button>
     </header>
 
     <div id="banner-container">
         <img id="banner" src="" alt="banner" />
-        <h1 id="banner-title"></h1>
-        <div id="button-container">
-            <button id="play-button">
-                <img style="width: 0.8rem; height: 0.8rem;" src="/assests/play.png" />
-                <span>Play</span>
-            </button>
-            <button id="more-info">
-                <img  id="info-icon" src="/assests/info.png" />
-                <span>More Information</span>
-            </button>
+        <div id="details-container">
+            <h1 id="banner-title"></h1>
+            <div id="button-container">
+                <button id="play-button">
+                    <img style="width: 0.8rem; height: 0.8rem;" src="/assests/play.png" />
+                    <span>Play</span>
+                </button>
+                <button id="more-info">
+                    <img id="info-icon" src="/assests/info.png" />
+                    <span>More Information</span>
+                </button>
+            </div>
         </div>
         <div id="empty"></div>
     </div>

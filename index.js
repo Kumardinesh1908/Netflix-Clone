@@ -171,8 +171,7 @@ function displaySearchResults(results) {
             buttonText = "Go to WatchList"; // Change button text
         }
 
-        const movieItem = document.createElement('li');
-
+        const movieItem = document.createElement('div');
         // Create HTML structure for each movie
         movieItem.innerHTML = `
                                 <div class = "search-item-thumbnail">
@@ -204,6 +203,8 @@ function displaySearchResults(results) {
         (thumbnail && info).addEventListener('click', () => {
             window.location.href = `movie_details/movie_details.html?media=${movie.media_type}&id=${movie.id}`;
         });
+        
+        movieItem.setAttribute('class', 'movie-list');
 
         // Append movie item to search results
         searchResults.appendChild(movieItem);
