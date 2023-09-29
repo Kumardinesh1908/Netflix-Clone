@@ -8,6 +8,7 @@ body {
 
 /* Header styles */
 .header {
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,19 +21,17 @@ body {
 
 /* Logo styles */
 #netflix-logo {
-  margin: 20px 20px 20px 40px;
-  width: 8%;
+  margin: 15px 20px 15px 20px;
+  width: 120px;
 }
 
-/* Label and input styles */
-
+/* input styles */
 input[type="text"] {
   width: 48.8%;
   font-size: 24px;
   padding: 5px;
   border-radius: 5px;
   border: transparent;
-
   background: rgba(255, 255, 255, 0.3);
 }
 
@@ -184,11 +183,11 @@ li:hover {
   align-items: center;
   gap: 5px;
   padding: 7px 20px;
-  cursor: pointer;
   border: none;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 0.2vw;
+  cursor: pointer;
   transition: 0.3s;
 }
 

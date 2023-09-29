@@ -81,10 +81,14 @@ function fetchMedia(containerClass, endpoint, mediaType) {
 
                     banner.src = `https://image.tmdb.org/t/p/original/${randomMovie.backdrop_path}`;
                     title.textContent = randomMovie.title || randomMovie.name;
-                    (play && info).addEventListener('click', () => {
-                        const media_Type = randomMovie.media_type || mediaType
+                    
+                    function redirectToMovieDetails() {
+                        const media_Type = randomMovie.media_type || mediaType;
                         window.location.href = `movie_details/movie_details.html?media=${media_Type}&id=${randomMovie.id}`;
-                    });
+                    }
+                    
+                    play.addEventListener('click', redirectToMovieDetails);
+                    info.addEventListener('click', redirectToMovieDetails);
                 }
             })
             .catch(error => {

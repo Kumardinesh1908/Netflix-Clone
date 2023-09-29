@@ -17,14 +17,15 @@ body {
 
 /* Logo styling */
 .logo {
-    width: 8%;
+    width: 120px;
     cursor: pointer;
-    margin: 20px;
+    margin: 15px 20px 15px 20px;
 }
 
 /* Styling for the favorite movies heading */
 .header h1 {
-    margin-right: 38%;
+    margin: 0;
+    margin-right: 41%;
     color: white;
     font-weight: 100;
 }
@@ -93,4 +94,43 @@ p {
     font-size: 36px;
     color: white;
     font-style: italic;
+}
+
+
+/* ----Media Queries---- */
+
+@media only screen and (max-width: 560px) {
+    .header{
+        flex-direction: column;
+    }
+    .header h1{
+        margin: 0px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 561px) and (max-width: 660px){
+    .header h1{
+        margin: 0px;
+        margin-right: 31%;
+    }
+}
+
+@media only screen and (min-width: 661px) and (max-width: 780px){
+    .header h1{
+        margin: 0px;
+        margin-right: 32.5%;
+    }
+}
+
+@media only screen and (min-width: 781px) and (max-width: 840px){
+    .header h1{
+        margin: 0px;
+        margin-right: 37.5%;
+    }
+}
+@media only screen and (min-width: 841px) and (max-width: 1025px){
+    .header h1{
+        margin-right: 39.5%;
+    }
 }
