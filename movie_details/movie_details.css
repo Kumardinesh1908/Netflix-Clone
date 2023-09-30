@@ -1,8 +1,7 @@
 /* Global styles for body and text elements */
 body,
 p,
-h1,
-p {
+h1 {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -25,26 +24,26 @@ p {
     margin: 15px 0px;
 }
 
-/* iframe */
-iframe {
-    width: 55%;
-    height: 75%;
-}
+
 
 /* Movie details container */
 .movie-details {
-    width: 100vw;
-    height: 100vh;
+    margin: 20px 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 0px 0;
 }
 
 /* Movie poster styling */
 .movie-poster {
-    width: 55%;
-    height: 75%;
+    width: 750px;
+    height: 460px;
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+    height: 100%;
 }
 
 #moviePoster {
@@ -123,87 +122,119 @@ p {
 
 /* ----Media Queries---- */
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 560px) {
     .movie-details {
         flex-direction: column;
-        padding: 0;
+        margin-top: 0;
         gap: 15px;
     }
 
-    .movie-poster,
-    iframe {
-        width: 100vw;
+    .movie-poster {
+        width: 100%;
         height: 280px;
     }
 
     .movie-info {
-        width: 90vw;
+        width: 90%;
         margin: auto;
         gap: 15px;
     }
+    .movie-data {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
 
-    .movie-info h1 {
-        font-size: 32px;
+@media screen and (min-width:561px) and (max-width:740px) {
+    .movie-details {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    #plot {
-        font-size: 16px;
-        line-height: 1.4;
+    .movie-poster {
+        width: 100%;
+        height: 360px;
+    }
+
+    .movie-info {
+        width: 90%;
+        margin: auto;
+        gap: 15px;
     }
 
     .movie-data {
         flex-direction: column;
         gap: 15px;
     }
-
-    .favoriteBtn {
-        width: 90vw;
-        margin-bottom: 20px;
-    }
 }
 
-@media only screen and (min-width: 741px) and (max-width: 800px) {
+@media screen and (min-width:741px) and (max-width:840px) {
     .movie-details {
         flex-direction: column;
-        padding: 0;
         gap: 15px;
     }
 
-    .movie-poster,
-    iframe {
-        width: 100vw;
+    .movie-poster {
+        width: 100%;
+    }
+
+    .movie-info {
+        width: 95%;
+        margin: auto;
+        gap: 15px;
+    }
+
+    .movie-data {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media screen and (min-width:841px) and (max-width:924px) {
+    .movie-poster {
+        width: 500px;
         height: 400px;
     }
 
     .movie-info {
-        width: 90vw;
-        margin: auto;
+        width: 36%;
         gap: 15px;
-    }
-
-    .movie-info h1 {
-        font-size: 32px;
-    }
-
-    #plot {
-        font-size: 16px;
-        line-height: 1.4;
     }
 
     .movie-data {
         flex-direction: column;
         gap: 15px;
     }
+}
 
-    .favoriteBtn {
-        width: 90vw;
-        margin-bottom: 20px;
+@media screen and (min-width:925px) and (max-width:1024px) {
+    .movie-poster {
+        width: 550px;
+    }
+
+    .movie-info {
+        width: 38%;
+        gap: 15px;
+    }
+
+    .movie-data {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 
-@media screen and (min-width:801px) and (max-width:1025px) {
-    .movie-poster,
-    iframe {
-        height: 70%;
+@media screen and (min-width:1025px) and (max-width:1300px) {
+    .movie-poster {
+        width: 600px;
+    }
+
+    .movie-info {
+        width: 39%;
+        gap: 15px;
+    }
+
+    .rating-data {
+        flex-direction: column;
+        gap: 15px;
     }
 }
