@@ -1,34 +1,44 @@
-# IMDB Clone - Movie Management Web App
-IMDB Clone is a dynamic web application that harnesses the power of vanilla JavaScript to provide users with a seamless and efficient browsing experience.
-The core functionality of the app centers around its capability to search for movies using the OMDB API.
-By querying the API, the application retrieves a wealth of data about the requested movie, including key details such as its title, release year, and other pertinent information. 
-This data is then thoughtfully presented in a user-friendly format, enabling users to swiftly access the precise movie details they desire.
+# NETFLIX CLONE :tv:
 
-# Usage
-- **Search Movies:** Users can search for movies using a search bar with auto-suggestions. Enter a movie title in the search bar to get a list of matching movies. Click on a movie to view its details.
-- **View Movie Details:** On the search results or favorite movies page, click on a movie to view its detailed information about a selected movie, including its title, poster, year, rating, genre, actors, and more.
-- **Favorite Movies Page:** Users can visit a dedicated page to view their list of favorite movies.
-- **Add to Favorites:** Click the "Add to Favorites" button on the search results or movie details page to add a movie to your favorite list.
-- **Remove from Favorites:** On the favorite movies page or movie details page, click the "Remove From Favorites" button to remove a movie from your favorites.
+<img src="/assests/NetFlix Image.png">
 
-# Technologies Used:
-- HTML5, CSS3 for front-end structure and styling
-- JavaScript for dynamic functionality
-- OMDB API for movie data
-- GitHub for version control
-- Hosted on GitHub Pages
+## Features :fire:
 
-# Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+:tv: Navbar with search option and WatchList button <br>
+:tv: Random movies in the banner when refresh<br>
+:tv: SlideShow of movies coming from the TMDB API<br>
+:tv: Movies based on Genre<br>
+:tv: Click the movie to see the description, complete title and more details!<br>
+:tv: If the video is sent from the API it'll be render!<br>
 
-## Prerequisites
-- A web browser (e.g. Google Chrome, Firefox, Safari)
-- An internet connection
-- A code editor (e.g. VS Code, Atom)
-## Installing
-- Clone or download the repository to your local machine
-- Open the project in your code editor
-- Open the index.html file in your web browser to run the app
+<img src="/assests/Netflix Details.png">
 
-# Live Demo
-Check out the live demo of the application at https://kumardinesh1908.github.io/imdb-clone/
+## Topics :
+
+:movie_camera: 1. Search Movies and Tv Shows <br>
+:movie_camera: 2. Using an TMDB API in JavaScript <br>
+:movie_camera: 3. Fetch to make the requests <br>
+:movie_camera: 4. Movie Details <br>
+:movie_camera: 4. Watch Trailer <br>
+:movie_camera: 5. WatchList <br>
+:movie_camera: 6. Add/Remove to WatchList <br>
+:movie_camera: 7. Transitions <br>
+:movie_camera: 8. SlideShow effect <br>
+:movie_camera: 9. Responsive <br>
+
+## Tech Stack
+
+:clapper: **HTML** <br>
+:clapper: **CSS** <br>
+:clapper: **JavaScript** <br>
+:clapper: **LocalStorage** <br>
+
+## Installation
+
+Clone the repo in your terminal writting:
+
+#### `$ git clone https://github.com/Kumardinesh1908/Netflix-Clone.git`
+
+## Demo
+
+#### `https://netflix-clone-kumardinesh1908.vercel.app/`
