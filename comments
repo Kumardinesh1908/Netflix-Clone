@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="/movie_details/movie_details.css"> <!-- Add your CSS file if needed -->
+</head>
+
+<body>
+    <!-- Header section -->
+    <div class="header">
+        <img src="/assests/netflix.png" alt="logo" class="logo">
+    </div>
+
+    <!-- Movie details section -->
+    <div class="movie-details">
+
+        <!-- Movie poster section -->
+        <div class="movie-poster">
+            <img id="moviePoster" src="" alt="Movie Poster">
+            <iframe frameborder="0" allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                src="" id="iframe"></iframe>
+        </div>
+
+        <!-- Movie information section -->
+        <div class="movie-info">
+
+            <h1 id="movieTitle"></h1>
+
+            <div class="design">
+                <p id="plot"></p>
+            </div>
+            <!-- Movie data section -->
+            <div class="movie-data">
+                <div class="design">
+                    <span>Released :</span>
+                    <p id="movieYear"></p>
+                </div>
+
+                <div class="design language">
+                    <span>Language :</span>
+                    <p id="language"></p>
+                </div>
+            </div>
+
+            <div class="movie-data">
+                <div class="design">
+                    <span>Rating :</span>
+                    <p id="rating"></p>
+                </div>
+                <div class="design genre">
+                    <span>Genre :</span>
+                    <p id="genre"></p>
+                </div>
+            </div>
+
+
+
+            <!-- Favorite button section -->
+            <div class="favoriteBtn"></div>
+        </div>
+    </div>
+
+    <!-- Included the JavaScript file for functionality -->
+    <script src="/movie_details/movie_details.js"></script>
+</body>
+
+</html>
+
+/* Global styles for body and text elements */
+body,
+p,
+h1{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* Header styling */
+.header {
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo styling */
+.logo {
+    width: 120px;
+    cursor: pointer;
+    margin: 15px 0px;
+}
+
+/* iframe */
+iframe {
+    height: 460px;
+    width: 750px;
+}
+
+/* Movie details container */
+.movie-details {
+    display: flex;
+    flex-direction: row;
+    /* gap: 20px; */
+    /* padding: 10px 00px 0px 20px; */
+}
+
+/* Movie poster styling */
+.movie-poster {
+    width: 750px;
+    height: 460px;
+}
+
+#moviePoster {
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid white; */
+}
+
+/* Movie information section */
+.movie-info {
+    width: 38%;
+}
+
+/* Movie title styling */
+.movie-info h1 {
+    color: #d4aa11;
+    font-size: 50px;
+}
+
+/* Plot styling */
+#plot {
+    line-height: 1.2;
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* Movie data styling */
+.movie-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Design class styling */
+.design {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    margin: 20px 0;
+}
+
+/* Styling for bold text elements */
+span {
+    font-weight: bold;
+    color: #d4aa11;
+}
+
+p {
+    font-weight: bold;
+}
+
+/* Favorite button styling */
+.favoriteBtn {
+    color: white;
+    font-weight: 600;
+    padding: 7px;
+    text-align: center;
+    width: 30%;
+    background: rgb(201, 22, 22);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+/* Favorite button hover styling */
+.favoriteBtn:hover {
+    background: black;
+    color: rgb(201, 22, 22);
+    border: 1px solid rgb(201, 22, 22)
+}
+
+
+/* ----Media Queries---- */
+
+@media only screen and (max-width: 560px) {
+    .movie-poster {
+        width: 100vw;
+        height: 390px;
+    }
+
+    #moviePoster {
+        height: 250px;
+    }
+
+    .movie-details {
+        flex-direction: column;
+        /* gap: 100px; */
+        padding: 0;
+    }
+
+    .movie-info {
+        width: 90vw;
+        margin: auto;
+    }
+
+    .movie-info h1 {
+        font-size: 32px;
+    }
+
+    .movie-data {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .favoriteBtn {
+        width: 90vw;
+        margin: 0;
+        /* margin: auto; */
+
+    }
+
+}
+
+/* @media only screen and (min-width: 561px) and (max-width: 660px){
+    .header h1{
+        margin: 0px;
+        margin-right: 31%;
+    }
+}
+
+@media only screen and (min-width: 661px) and (max-width: 780px){
+    .header h1{
+        margin: 0px;
+        margin-right: 32.5%;
+    }
+}
+
+@media only screen and (min-width: 781px) and (max-width: 840px){
+    .header h1{
+        margin: 0px;
+        margin-right: 37.5%;
+    }
+}
+@media only screen and (min-width: 841px) and (max-width: 1025px){
+    .header h1{
+        margin: 0px;
+        margin-right: 39.5%;
+    }
+} */
+
+
+
+

@@ -20,9 +20,16 @@
         <!-- Movie poster section -->
         <div class="movie-poster">
             <img id="moviePoster" src="" alt="Movie Poster">
-            <iframe width="750" height="460" frameborder="0" allowfullscreen
+            <iframe frameborder="0" allowfullscreen
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 src="" id="iframe"></iframe>
+        </div>
+
+        <!-- Movie information section -->
+        <div class="movie-info">
+
+            <h1 id="movieTitle"></h1>
+            <p id="plot"></p>
 
             <!-- Movie data section -->
             <div class="movie-data">
@@ -30,34 +37,26 @@
                     <span>Released :</span>
                     <p id="movieYear"></p>
                 </div>
+
                 <div class="design">
-                    <span>Rating :</span>
-                    <p id="rating"></p>
-                </div>
-                <div class="design language">
                     <span>Language :</span>
                     <p id="language"></p>
                 </div>
             </div>
 
-        </div>
-        <!-- Movie information section -->
-        <div class="movie-info">
-
-            <h1 id="movieTitle"></h1>
-
-            <div class="design">
-                <p id="plot"></p>
+            <div class="movie-data">
+                <div class="design">
+                    <span>Rating :</span>
+                    <p id="rating"></p>
+                </div>
+                <div class="design">
+                    <span>Genre :</span>
+                    <p id="genre"></p>
+                </div>
             </div>
 
-            <div class="design genre">
-                <span>Genre :</span>
-                <p id="genre"></p>
-            </div>
-
-
-        <!-- Favorite button section -->
-        <div class="favoriteBtn"></div>
+            <!-- Favorite button section -->
+            <button class="favoriteBtn"></button>
         </div>
     </div>
 

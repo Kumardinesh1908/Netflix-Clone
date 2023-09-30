@@ -190,6 +190,7 @@ input::-webkit-input-placeholder {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  z-index: 1;
 }
 
 #banner-title {

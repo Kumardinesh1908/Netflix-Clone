@@ -8,17 +8,24 @@ body,p,h1,p {
 
 /* Header styling */
 .header {
+    width: 100vw;
+    height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background: black;
+    justify-content: center;
 }
 
 /* Logo styling */
 .logo {
     width: 120px;
     cursor: pointer;
-    margin: 15px 20px 15px 20px;
+    margin: 15px 0px;
+}
+
+/* iframe */
+iframe{
+    height: 460px;
+    width: 750px;
 }
 
 /* Movie details container */
@@ -26,8 +33,7 @@ body,p,h1,p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 50px 0px 20px;
-    background: black;
+    padding: 0px 25px;
 }
 
 /* Movie poster styling */
@@ -35,25 +41,29 @@ body,p,h1,p {
     width:750px;
     height: 460px;
 }
+
 #moviePoster{
     width: 100%;
     height: 100%;
-    border: 2px solid white;
 }
 
 /* Movie information section */
 .movie-info {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Movie title styling */
 .movie-info h1{
     color: #d4aa11;
-    font-size: 50px;
+    font-size: 46px;
 }
 
 /* Plot styling */
 #plot{
+    color: white;
     line-height: 1.2;
     font-size: 18px;
     text-align: justify;
@@ -63,8 +73,7 @@ body,p,h1,p {
 .movie-data {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 /* Design class styling */
@@ -72,9 +81,8 @@ body,p,h1,p {
     display: flex;
     flex-direction: row;
     align-items:center ;
-    gap: 10px;
+    gap: 5px;
     color:white;
-    margin: 20px 0;
 }
 
 /* Styling for bold text elements */
@@ -86,19 +94,17 @@ span{
 p{
     font-weight: bold;
 }
-
 /* Favorite button styling */
 .favoriteBtn{
     color:white;
+    font-size: 16px;
     font-weight: 600;
-    padding: 7px;
+    padding: 8px 20px;
     text-align: center;
-    width:30%;
     background: rgb(201, 22, 22);
-    border-radius: 5px;
+    border-radius: 3px;
     border:1px solid transparent;
     cursor: pointer;
-    margin: 20px 0;
 }
 
 /* Favorite button hover styling */
@@ -111,39 +117,36 @@ p{
 
 /* ----Media Queries---- */
 
-/* @media only screen and (max-width: 560px) {
-    .header{
+@media only screen and (max-width: 560px) {
+    .movie-details {
         flex-direction: column;
+        padding: 0;
+        gap: 15px;
+    } 
+    .movie-poster,
+    iframe {
+        width: 100vw;
+        height: 260px;
     }
-    .header h1{
-        margin: 0px;
-        text-align: center;
+    .movie-info {
+        width: 90vw;
+        margin: auto;
+        gap: 15px;
     }
-} */
+    .movie-info h1 {
+        font-size: 32px;
+    }
+    #plot{
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .movie-data {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .favoriteBtn {
+        width: 90vw;
+        margin-bottom: 20px;
+    }
 
-/* @media only screen and (min-width: 561px) and (max-width: 660px){
-    .header h1{
-        margin: 0px;
-        margin-right: 31%;
-    }
 }
-
-@media only screen and (min-width: 661px) and (max-width: 780px){
-    .header h1{
-        margin: 0px;
-        margin-right: 32.5%;
-    }
-}
-
-@media only screen and (min-width: 781px) and (max-width: 840px){
-    .header h1{
-        margin: 0px;
-        margin-right: 37.5%;
-    }
-}
-@media only screen and (min-width: 841px) and (max-width: 1025px){
-    .header h1{
-        margin: 0px;
-        margin-right: 39.5%;
-    }
-} */

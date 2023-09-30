@@ -37,16 +37,19 @@ async function displayMovieDetails() {
         const movieDetails = await fetchMovieDetails(id);
 
         var spokenlanguage = movieDetails.spoken_languages.map(language => language.english_name)
-        var genreNames = movieDetails.genres.map(genre => genre.name);
+        language.textContent = spokenlanguage.join(', ');
 
-        // Setting the values of various elements with movie details
+        var genreNames = movieDetails.genres.map(genre => genre.name);
+        genre.innerText = genreNames.join(', ');
+
+        movieDetails.overview.length > 290
+            ? plot.textContent = `${movieDetails.overview.substring(0, 290)}...`
+            : plot.textContent = movieDetails.overview;
+
         movieTitle.textContent = movieDetails.name || movieDetails.title;
         moviePoster.src = `https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`;
         movieYear.textContent = `${movieDetails.release_date || movieDetails.first_air_date}`;
         rating.textContent = movieDetails.vote_average;
-        genre.innerText = genreNames.join(', ');
-        plot.textContent = movieDetails.overview.substring(0,590);
-        language.textContent = spokenlanguage.join(', ');
 
         // Updating the favorite button text and adding a click event listener to toggle favorites
         if (favoriteMovies.some(favoriteMovie => favoriteMovie.id === movieDetails.id)) {
@@ -60,20 +63,17 @@ async function displayMovieDetails() {
         movieTitle.textContent = "Details are not available right now! Please try after some time."
     }
 
-    try{
+    try {
         const videoDetails = await fetchVideoDetails(id);
-        console.log("videoDetails",videoDetails)
         const trailer = videoDetails.find(video => video.type === 'Trailer');
-        console.log("trailer",trailer)
-        
         if (trailer) {
             iframe.src = `https://www.youtube.com/embed/${trailer.key}?autoplay=1`;
-            moviePoster.style.display="none";
+            moviePoster.style.display = "none";
         } else {
-            iframe.style.display="none";
+            iframe.style.display = "none";
         }
-    }catch(error){
-        iframe.style.display="none";
+    } catch (error) {
+        iframe.style.display = "none";
     }
 }
 
