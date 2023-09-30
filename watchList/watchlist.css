@@ -48,8 +48,9 @@ body {
     margin: 20px auto;
 }
 
-.watchlist-item:hover{
-    box-shadow: 0 0 20px rgba(253, 228, 181, 0.5); ;
+.watchlist-item:hover {
+    box-shadow: 0 0 20px rgba(253, 228, 181, 0.5);
+    ;
 }
 
 /* Styling for the thumbnail image */
@@ -99,37 +100,39 @@ p {
 /* ----Media Queries---- */
 
 @media only screen and (max-width: 560px) {
-    .header{
+    .header {
         flex-direction: column;
     }
-    .header h1{
+
+    .header h1 {
         margin: 0px;
         text-align: center;
     }
 }
 
-@media only screen and (min-width: 561px) and (max-width: 660px){
-    .header h1{
+@media only screen and (min-width: 561px) and (max-width: 660px) {
+    .header h1 {
         margin: 0px;
         margin-right: 31%;
     }
 }
 
-@media only screen and (min-width: 661px) and (max-width: 780px){
-    .header h1{
+@media only screen and (min-width: 661px) and (max-width: 780px) {
+    .header h1 {
         margin: 0px;
         margin-right: 32.5%;
     }
 }
 
-@media only screen and (min-width: 781px) and (max-width: 840px){
-    .header h1{
+@media only screen and (min-width: 781px) and (max-width: 840px) {
+    .header h1 {
         margin: 0px;
         margin-right: 37.5%;
     }
 }
-@media only screen and (min-width: 841px) and (max-width: 1025px){
-    .header h1{
+
+@media only screen and (min-width: 841px) and (max-width: 1025px) {
+    .header h1 {
         margin-right: 39.5%;
     }
 }

@@ -547,6 +547,7 @@ input::-webkit-input-placeholder {
   .search-item-thumbnail {
     width: 15%;
   }
+
   .search-item-info h3 {
     font-size: 0.9rem;
   }
@@ -554,12 +555,14 @@ input::-webkit-input-placeholder {
   .search-item-info p {
     font-size: 0.8rem;
   }
+
   .watchListBtn {
     position: relative;
     top: 0;
     right: 5px;
     font-size: 14px;
   }
+
   #banner-container {
     width: 100vw;
   }
@@ -568,6 +571,7 @@ input::-webkit-input-placeholder {
     bottom: 14%;
     gap: 15px;
   }
+
   #empty {
     width: 100vw;
   }

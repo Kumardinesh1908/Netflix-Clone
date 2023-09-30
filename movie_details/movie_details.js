@@ -19,12 +19,12 @@ const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 // API key for TMDB API
 const api_Key = '4626200399b08f9d04b72348e3625f15';
 
-// Retrieve the IMDb ID from the URL parameter
+// Retrieve the TMDb ID and Media from the URL parameter
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 const media = params.get("media");
 
-// Function to fetch detailed information about the movie using its IMDb ID
+// Function to fetch detailed information using its TMDb ID
 async function fetchMovieDetails(id) {
     const response = await fetch(`https://api.themoviedb.org/3/${media}/${id}?api_key=${api_Key}`);
     const data = await response.json();
