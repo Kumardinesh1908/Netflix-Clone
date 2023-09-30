@@ -4,10 +4,11 @@
 
 ## Features :fire:
 
-:tv: Navbar with search option and WatchList button <br>
-:tv: Random movies in the banner when refresh<br>
-:tv: SlideShow of movies coming from the TMDB API<br>
-:tv: Movies based on Genre<br>
+:tv: Navbar with search option and WatchList button. <br>
+:tv: Random movies in the banner when refresh.<br>
+:tv: WatchList with data persistant.<br>
+:tv: SlideShow of movies coming from the TMDB API.<br>
+:tv: Movies based on Genre.<br>
 :tv: Click the movie to see the description, complete title and more details!<br>
 :tv: If the video is sent from the API it'll be render!<br>
 
@@ -15,12 +16,11 @@
 
 ## Topics :
 
-:movie_camera: 1. Search Movies and Tv Shows <br>
-:movie_camera: 2. Using an TMDB API in JavaScript <br>
-:movie_camera: 3. Fetch to make the requests <br>
-:movie_camera: 4. Movie Details <br>
+:movie_camera: 1. Using an TMDB API in JavaScript <br>
+:movie_camera: 2. Fetch to make the requests <br>
+:movie_camera: 3. Movie Details <br>
 :movie_camera: 4. Watch Trailer <br>
-:movie_camera: 5. WatchList <br>
+:movie_camera: 5. WatchList using LocalStoarge <br>
 :movie_camera: 6. Add/Remove to WatchList <br>
 :movie_camera: 7. Transitions <br>
 :movie_camera: 8. SlideShow effect <br>
