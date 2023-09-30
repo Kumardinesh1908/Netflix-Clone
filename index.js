@@ -1,11 +1,11 @@
 // Get references to HTML elements
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
-const goToFavoriteMoviesBtn = document.getElementById('goToFavoriteMovies');
+const goToWatchlistBtn = document.getElementById('goToWatchlist');
 
-// Event listener to navigate to favorite movies page
-goToFavoriteMoviesBtn.addEventListener('click', () => {
-    window.location.href = 'favorite_movies/favorite_movies.html';
+// Event listener to navigate to WatchList page
+goToWatchlistBtn.addEventListener('click', () => {
+    window.location.href = 'watchList/watchlist.html';
 });
 
 const scrollDistance = 900;
@@ -111,8 +111,8 @@ fetchMedia('romantic-container', 'discover/movie?with_genres=10749', 'movie');
 
 
 
-// Variables to handle favorite movies list
-const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+// Variables to handle WatchList list
+const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
 // Event listener for search input changes
 searchInput.addEventListener('input', async () => {
@@ -167,7 +167,7 @@ function displaySearchResults(results) {
         let buttonText = "Add to WatchList"; // Set default button text
 
         // Check if the movie is already in WatchList
-        if (favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id)) {
+        if (watchlist.find(watchlistItem => watchlistItem.id === movie.id)) {
             buttonText = "Go to WatchList"; // Change button text
         }
 
@@ -181,17 +181,17 @@ function displaySearchResults(results) {
                                     <h3>${shortenedTitle}</h3>
                                     <p>${movie.media_type} <span> &nbsp; ${date}</span></p>
                                 </div>
-                                <button class="favoriteBtn" id="${movie.id}">${buttonText}</button>   
+                                <button class="watchListBtn" id="${movie.id}">${buttonText}</button>   
                                 `;
 
-        const favoriteBtn = movieItem.querySelector('.favoriteBtn');
+        const watchListBtn = movieItem.querySelector('.watchListBtn');
 
-        // Add event listener for favorite button
-        favoriteBtn.addEventListener('click', () => {
+        // Add event listener for WatchList button
+        watchListBtn.addEventListener('click', () => {
             if (buttonText === "Add to WatchList") {
-                addToFavorites(movie);
+                addToWatchList(movie);
             } else {
-                window.location.href = 'favorite_movies/favorite_movies.html'; // Navigate to the favorite movies page
+                window.location.href = 'watchList/watchlist.html'; // Navigate to the WatchList page
             }
         });
 
@@ -211,17 +211,17 @@ function displaySearchResults(results) {
     });
 }
 
-// Function to add a movie to favorites
-function addToFavorites(movie) {
-    // Check if the movie is not already in the favorites list
-    if (!favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id)) {
-        favoriteMovies.push(movie);
-        localStorage.setItem('favoriteMovies', JSON.stringify(favoriteMovies)); // Store in Local Storage
-        const favoriteBtn = document.querySelector(`[id="${movie.id}"]`);
-        if (favoriteBtn) {
-            favoriteBtn.textContent = "Go to WatchList";
-            favoriteBtn.addEventListener('click', () => {
-                window.location.href = 'favorite_movies/favorite_movies.html'; // Navigate to the favorite movies page
+// Function to add a movie to WatchList
+function addToWatchList(movie) {
+    // Check if the movie is not already in the WatchList list
+    if (!watchlist.find(watchlistItem => watchlistItem.id === movie.id)) {
+        watchlist.push(movie);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist)); // Store in Local Storage
+        const watchListBtn = document.querySelector(`[id="${movie.id}"]`);
+        if (watchListBtn) {
+            watchListBtn.textContent = "Go to WatchList";
+            watchListBtn.addEventListener('click', () => {
+                window.location.href = 'watchList/watchlist.html'; // Navigate to the WatchList page
             });
         }
     }

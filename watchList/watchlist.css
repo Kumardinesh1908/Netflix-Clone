@@ -22,7 +22,7 @@ body {
     margin: 15px 20px 15px 20px;
 }
 
-/* Styling for the favorite movies heading */
+/* Styling for the WatchList heading */
 .header h1 {
     margin: 0;
     margin-right: 41%;
@@ -30,18 +30,17 @@ body {
     font-weight: 100;
 }
 
-/* Styling for the list of favorite movies */
-#favoriteMoviesList {
+/* Styling for the list of WatchList */
+#watchList-Items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
-    /* justify-content: space-evenly; */
 }
 
-/* Styling for each individual favorite movie item */
-.favorite-movie-item {
-    width: 261px;
+/* Styling for each individual WatchList item */
+.watchlist-item {
+    width: 280px;
     height: auto;
     border: 1px solid white;
     border-radius: 5px;
@@ -49,7 +48,7 @@ body {
     margin: 20px auto;
 }
 
-.favorite-movie-item:hover{
+.watchlist-item:hover{
     box-shadow: 0 0 20px rgba(253, 228, 181, 0.5); ;
 }
 

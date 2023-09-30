@@ -13,8 +13,8 @@ const genre = document.getElementById('genre');
 const plot = document.getElementById('plot');
 const language = document.getElementById("language");
 const iframe = document.getElementById("iframe");
-const favoriteBtn = document.querySelector('.favoriteBtn');
-const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+const watchListBtn = document.querySelector('.watchListBtn');
+const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
 // API key for TMDB API
 const api_Key = '4626200399b08f9d04b72348e3625f15';
@@ -52,12 +52,12 @@ async function displayMovieDetails() {
         rating.textContent = movieDetails.vote_average;
 
         // Updating the favorite button text and adding a click event listener to toggle favorites
-        if (favoriteMovies.some(favoriteMovie => favoriteMovie.id === movieDetails.id)) {
-            favoriteBtn.textContent = "Remove From WatchList";
+        if (watchlist.some(favoriteMovie => favoriteMovie.id === movieDetails.id)) {
+            watchListBtn.textContent = "Remove From WatchList";
         } else {
-            favoriteBtn.textContent = "Add To WatchList";
+            watchListBtn.textContent = "Add To WatchList";
         }
-        favoriteBtn.addEventListener('click', () => toggleFavorite(movieDetails));
+        watchListBtn.addEventListener('click', () => toggleFavorite(movieDetails));
 
     } catch (error) {
         movieTitle.textContent = "Details are not available right now! Please try after some time."
@@ -79,15 +79,15 @@ async function displayMovieDetails() {
 
 // Function to toggle adding/removing from favorites
 function toggleFavorite(movieDetails) {
-    const index = favoriteMovies.findIndex(movie => movie.id === movieDetails.id);
+    const index = watchlist.findIndex(movie => movie.id === movieDetails.id);
     if (index !== -1) {
-        favoriteMovies.splice(index, 1);
-        favoriteBtn.textContent = "Add To WatchList";
+        watchlist.splice(index, 1);
+        watchListBtn.textContent = "Add To WatchList";
     } else {
-        favoriteMovies.push(movieDetails);
-        favoriteBtn.textContent = "Remove From WatchList";
+        watchlist.push(movieDetails);
+        watchListBtn.textContent = "Remove From WatchList";
     }
-    localStorage.setItem('favoriteMovies', JSON.stringify(favoriteMovies));
+    localStorage.setItem('watchlist', JSON.stringify(watchlist));
 }
 
 // Call the function to display movie details when the page loads

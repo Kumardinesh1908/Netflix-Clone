@@ -7,6 +7,7 @@ h1 {
     padding: 0;
     background-color: black;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Header styling */
@@ -24,8 +25,6 @@ h1 {
     cursor: pointer;
     margin: 15px 0px;
 }
-
-
 
 /* Movie details container */
 .movie-details {
@@ -101,8 +100,8 @@ p {
     font-weight: bold;
 }
 
-/* Favorite button styling */
-.favoriteBtn {
+/* watchList button styling */
+.watchListBtn {
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -114,8 +113,8 @@ p {
     cursor: pointer;
 }
 
-/* Favorite button hover styling */
-.favoriteBtn:hover {
+/* watchList button hover styling */
+.watchListBtn:hover {
     background: black;
     color: rgb(201, 22, 22);
     border: 1px solid rgb(201, 22, 22)
@@ -141,6 +140,7 @@ p {
         margin: auto;
         gap: 15px;
     }
+
     .movie-data {
         flex-direction: column;
         gap: 15px;
