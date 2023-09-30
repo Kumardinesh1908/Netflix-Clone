@@ -47,7 +47,7 @@ body {
 }
 
 .input-container {
-  width: 655px;
+  width: 48vw;
   margin-top: 15px;
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@ input::-webkit-input-placeholder {
 }
 
 #searchResults {
-  width: 655px;
+  width: 48vw;
   height: 460px;
   overflow-y: auto;
   position: absolute;
@@ -125,7 +125,7 @@ input::-webkit-input-placeholder {
 
 /* Search item information styles */
 .search-item-info {
-  width: 45%;
+  width: 48%;
   height: 100%;
   color: white;
   text-transform: capitalize;
@@ -182,7 +182,8 @@ input::-webkit-input-placeholder {
   object-fit: cover;
   object-position: center top;
 }
-#details-container{
+
+#details-container {
   position: absolute;
   bottom: 18%;
   left: 3%;
@@ -397,26 +398,30 @@ input::-webkit-input-placeholder {
     right: 5px;
     font-size: 12px;
   }
+
   #banner-container {
     width: 100vw;
   }
+
   #banner-title {
     font-size: 40px;
-    
+
   }
-  #details-container{
+
+  #details-container {
     bottom: 12%;
 
   }
-  #empty{
-    width: 100vw;
-  } 
 
-  .movie-section h1{
+  #empty {
+    width: 100vw;
+  }
+
+  .movie-section h1 {
     font-size: 1.2rem;
   }
 
-  .movies-box{
+  .movies-box {
     gap: 4px;
   }
 
@@ -426,12 +431,12 @@ input::-webkit-input-placeholder {
     margin: 8px 0;
   }
 
-  .movies-box div img{
+  .movies-box div img {
     width: 120px;
     height: 90px;
   }
 
-  .navigation-button{
+  .navigation-button {
     width: 40px;
     height: 90px;
     top: 8%;
@@ -442,16 +447,162 @@ input::-webkit-input-placeholder {
     width: 120px;
     height: 150px;
   }
-  
+
   .netflix-container div img {
     width: 120px;
     height: 150px;
   }
-  
+
   .netflix-previous,
   .netflix-next {
     width: 40px;
     height: 150px;
     top: 5%;
+  }
+}
+
+@media only screen and (min-width: 561px) and (max-width: 780px) {
+  .search-item-thumbnail {
+    width: 25%;
+  }
+
+  .favoriteBtn {
+    position: relative;
+    top: 0;
+    right: 5px;
+    font-size: 14px;
+  }
+
+  .search-item-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .search-item-info p {
+    display: none;
+  }
+
+  #banner-container {
+    width: 100vw;
+  }
+
+  #details-container {
+    bottom: 12%;
+    gap: 15px;
+  }
+
+  #banner-title {
+    font-size: 42px
+  }
+
+  #empty {
+    width: 100vw;
+  }
+
+  .movie-section h1 {
+    font-size: 1.4rem;
+  }
+
+  .movies-box {
+    gap: 5px;
+  }
+
+  .movies-box div {
+    width: 200px;
+    height: 130px;
+    margin: 10px 0;
+  }
+
+  .movies-box div img {
+    width: 200px;
+    height: 130px;
+  }
+
+  .navigation-button {
+    width: 45px;
+    height: 130px;
+    top: 7%;
+    font-size: 2rem;
+  }
+
+  .netflix-container div {
+    width: 180px;
+    height: 200px;
+  }
+
+  .netflix-container div img {
+    width: 180px;
+    height: 200px;
+  }
+
+  .netflix-previous,
+  .netflix-next {
+    width: 50px;
+    height: 200px;
+    top: 4.8%;
+  }
+}
+
+@media only screen and (min-width:781px) and (max-width: 1250px) {
+  .search-item-thumbnail {
+    width: 15%;
+  }
+  .search-item-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .search-item-info p {
+    font-size: 0.8rem;
+  }
+  .favoriteBtn {
+    position: relative;
+    top: 0;
+    right: 5px;
+    font-size: 14px;
+  }
+  #banner-container {
+    width: 100vw;
+  }
+
+  #details-container {
+    bottom: 14%;
+    gap: 15px;
+  }
+  #empty {
+    width: 100vw;
+  }
+
+  .movies-box div {
+    width: 230px;
+    height: 150px;
+    margin: 15px 0;
+  }
+
+  .movies-box div img {
+    width: 230px;
+    height: 150px;
+  }
+
+  .navigation-button {
+    width: 55px;
+    height: 150px;
+    top: 7.9%;
+    font-size: 2.3rem;
+  }
+
+  .netflix-container div {
+    width: 250px;
+    height: 270px;
+  }
+
+  .netflix-container div img {
+    width: 250px;
+    height: 270px;
+  }
+
+  .netflix-previous,
+  .netflix-next {
+    width: 50px;
+    height: 270px;
+    top: 4.8%;
   }
 }
