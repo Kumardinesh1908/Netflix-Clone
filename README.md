@@ -16,7 +16,7 @@
 
 ## Topics :
 
-:movie_camera: 1. Using an TMDB API in JavaScript <br>
+:movie_camera: 1. Using the TMDB API in JavaScript <br>
 :movie_camera: 2. Fetch to make the requests <br>
 :movie_camera: 3. Movie Details <br>
 :movie_camera: 4. Watch Trailer <br>
@@ -36,9 +36,12 @@
 ## Installation
 
 Clone the repo in your terminal writting:
-
-#### `$ git clone https://github.com/Kumardinesh1908/Netflix-Clone.git`
+```
+git clone https://github.com/Kumardinesh1908/Netflix-Clone.git
+```
 
 ## Demo
 
-#### `https://netflix-clone-kumardinesh1908.vercel.app/`
+```
+https://netflix-clone-kumardinesh1908.vercel.app
+```
