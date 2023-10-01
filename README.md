@@ -1,5 +1,6 @@
 # NETFLIX CLONE :tv:
-
+A Netflix clone is a video streaming app that offers a similar user experience and features to Netflix. It allows users to browse and watch a variety of TV shows and movies on their devices.<br>
+<br>
 <img src="/assests/NetFlix Image.png">
 
 ## Features :fire:
