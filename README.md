@@ -44,5 +44,5 @@ git clone https://github.com/Kumardinesh1908/Netflix-Clone.git
 ## Demo
 
 ```
-https://netflix-clone-kumardinesh1908.vercel.app
+https://netflix-clone-five-neon.vercel.app/
 ```
