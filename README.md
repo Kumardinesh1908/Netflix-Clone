@@ -1,5 +1,6 @@
 # NETFLIX CLONE :tv:
-
+A Netflix clone is a video streaming app that offers a similar user experience and features to Netflix. It allows users to browse and watch a variety of TV shows and movies on their devices.<br>
+<br>
 <img src="/assests/NetFlix Image.png">
 
 ## Features :fire:
@@ -13,7 +14,8 @@
 
 <img src="/assests/Netflix Details.png">
 
-## Topics :pencil:
+## Topics :
+
 :movie_camera: 1. Using an TMDB API in JavaScript <br>
 :movie_camera: 2. Fetch to make the requests <br>
 :movie_camera: 3. Movie Details <br>
@@ -33,9 +35,12 @@
 ## Installation
 
 Clone the repo in your terminal writting:
-
-#### `$ git clone https://github.com/Kumardinesh1908/Netflix-Clone.git`
+```
+git clone https://github.com/Kumardinesh1908/Netflix-Clone.git
+```
 
 ## Demo
 
-#### `https://netflix-clone-kumardinesh1908.vercel.app/`
+```
+https://netflix-clone-five-neon.vercel.app/
+```
