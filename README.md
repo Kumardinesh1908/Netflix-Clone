@@ -3,7 +3,6 @@
 <img src="/assests/NetFlix Image.png">
 
 ## Features :fire:
-
 :tv: Navbar with search option and WatchList button. <br>
 :tv: Random movies in the banner when refresh.<br>
 :tv: WatchList with data persistant.<br>
@@ -14,8 +13,7 @@
 
 <img src="/assests/Netflix Details.png">
 
-## Topics :
-
+## Topics :pencil:
 :movie_camera: 1. Using an TMDB API in JavaScript <br>
 :movie_camera: 2. Fetch to make the requests <br>
 :movie_camera: 3. Movie Details <br>
@@ -26,8 +24,7 @@
 :movie_camera: 8. SlideShow effect <br>
 :movie_camera: 9. Responsive <br>
 
-## Tech Stack
-
+## Tech Stack :computer:
 :clapper: **HTML** <br>
 :clapper: **CSS** <br>
 :clapper: **JavaScript** <br>
